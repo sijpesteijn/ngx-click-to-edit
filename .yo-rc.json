@@ -1,0 +1,14 @@
+{
+  "generator-angular-library": {
+    "githubUsername": "sijpesteijn",
+    "githubRepoName": "ngx-click-to-edit",
+    "npmModuleName": "ngx-click-to-edit",
+    "allowNg2InModuleName": true,
+    "moduleGlobal": "ngxClickToEdit",
+    "ngModuleName": "NgxClickToEditModule",
+    "selectorPrefix": "/",
+    "projectTitle": "ngx click to edit",
+    "projectDescription": "",
+    "authorName": "gijs.sijpesteijn"
+  }
+}

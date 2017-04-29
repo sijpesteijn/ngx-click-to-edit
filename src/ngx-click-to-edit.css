@@ -1,0 +1,75 @@
+.click-to-edit {
+}
+
+.selectable {
+    cursor: pointer;
+}
+
+.ndv-comp {
+    position: relative;
+    overflow: hidden;
+    min-width: 20px;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.fa-pencil {
+    float: left;
+    padding-top: 2px;
+}
+
+.click-to-edit-content {
+    float: left;
+}
+
+.click-to-edit-value {
+    float: left;
+    min-width: 33px;
+    padding: 0 2px 0 8px;
+    text-align: right;
+}
+
+.click-to-edit-unit {
+    float: left;
+}
+
+.active-ndv {
+    background-color: transparent;
+}
+input {
+    border-radius: 5px;
+    box-shadow: none;
+    min-width: 5px;
+    color: #000;
+}
+.ndv-buttons {
+    background-color: transparent;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 3px 6px rgba(111,111,111,0.2);
+    outline: none;
+    padding: 3px;
+    position: absolute;
+    margin-left: 6px;
+    z-index: 1;
+}
+.ndv-comp:hover {
+}
+.ndv-save {
+    margin-right:3px;
+}
+.ndv-active {
+    background-color: transparent;
+}
+.ng-invalid {
+    background: #ffb8b8;
+}
+.err-bubble {
+    position: absolute;
+    margin: 16px 100px;
+    border: 1px solid red;
+    font-size: 14px;
+    background: #ffb8b8;
+    padding: 10px;
+    border-radius: 7px;
+}

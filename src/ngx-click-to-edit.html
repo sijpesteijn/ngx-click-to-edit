@@ -1,0 +1,23 @@
+<div class="click-to-edit">
+    <div class='ndv-comp' [ngClass]="{'ndv-active':show}">
+        <input *ngIf='show && type === "string"' [ngClass]="{'ng-invalid': invalid}" (ngModelChange)="validate($event)"
+               type='text' [(ngModel)]='value' (keyup)="onKey($event)"/>
+        <input *ngIf='show && type === "number"' [ngClass]="{'ng-invalid': invalid}" (ngModelChange)="validate($event)"
+               type='number' min="min" max="max" [(ngModel)]='value' (keyup)="onKey($event)"/>
+
+        <div class='err-bubble' *ngIf="invalid">{{error || " must contain " + min + " to -" + max +" chars."}}</div>
+
+        <div *ngIf='!show'>
+            <div *ngIf="hideTrigger === false">
+                <div #ref class="click-to-edit-content selectable" (click)='makeEditable("trigger")'><ng-content></ng-content></div>
+                <i class="fa fa-pencil selectable" (click)='makeEditable("trigger")' *ngIf="ref.childNodes.length == 0"></i>
+            </div>
+            <div class="click-to-edit-value" [class.selectable]="full === true || hideTrigger === true" (click)='makeEditable("value")' [innerHTML]="value || 'empty'"></div>
+            <div class="click-to-edit-unit" [class.selectable]="full === true || hideTrigger === true" (click)='makeEditable("unit")' *ngIf="unit !== ''" [innerHTML]="unit"></div>
+        </div>
+    </div>
+    <div class='ndv-buttons' *ngIf='show'>
+        <button class='btn-x-sm' (click)='callSave()'><i class="fa fa-check"></i></button>
+        <button class='btn-x-sm' (click)='cancelEditable()'><i class="fa fa-times"></i></button>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+Default (string):
+<ngx-click-to-edit [value]="'Some text'"></ngx-click-to-edit>
+Full select:
+<ngx-click-to-edit [value]="'Bla'" [full]="true"></ngx-click-to-edit>
+Number:
+<ngx-click-to-edit [type]="number" [value]="9" [min]="0" [max]="10"></ngx-click-to-edit>
+Number with unit:
+<ngx-click-to-edit [type]="number" [value]="9" [min]="0" [max]="10" [unit]="'m/s'"></ngx-click-to-edit>
+With ng-content:
+<ngx-click-to-edit [value]="'Bla'">edit</ngx-click-to-edit>
+Full select with ng-content:
+<ngx-click-to-edit [value]="'Bla'" [full]="true">edit</ngx-click-to-edit>
+No trigger icon:
+<ngx-click-to-edit [value]="'Bla'" [hideTrigger]="true"></ngx-click-to-edit>
+
+<div class="row">
+    <div class="col-md-10 col-xs-12 col-md-offset-1 push-md-1">
+        <div class="content-header">
+            <h1>Click to Edit</h1>
+        </div>
+
+        <div class="content-box" id="content">
+
+            <div class="section" id="example">
+                <div class="item">
+
+                    <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re
+                        made interactive with the included dropdown directives.</p>
+
+                    <h2>Contents</h2>
+                    <ul>
+                        <li><a fragment="examples" routerlink="." href="#usage">Usage</a></li>
+                        <li><a fragment="examples" routerlink="." href="#examples">Examples</a>
+                            <ul>
+                                <li><a fragment="single-button" routerlink="." href="#/dropdowns#single-button">Single
+                                    button dropdowns</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2 fragment="usage" id="usage" routerlink=".">Usage</h2>
+
+                    <pre>
+                    import &#123; BsDropdownModule &#125; from 'ngx-bootstrap';&#xD;
+
+                    @NgModule(&#123;
+                    imports: [BsDropdownModule.forRoot(),...]
+                    &#125;)
+                    export class AppModule()&#123;&#125;</pre>
+
+                    <h2 fragment="examples" id="examples" routerlink=".">Examples</h2>
+                    <p>Wrap the dropdown’s toggle (your button or link) and the dropdown menu within
+                        <code>dropdown</code>.
+                        Dropdowns can be triggered from <code> &lt;a&gt;</code> or <code> &lt;button&gt;</code> elements
+                        to better fit your potential needs.</p>
+
+                    <h2 fragment="single-button" id="single-button" routerlink=".">Single button dropdowns</h2>
+
+                    <p>Any single <code>.btn</code> can be turned into a dropdown toggle with some markup changes.
+                        Here’s how you can put them to work with either <code> &lt;button&gt; </code> elements:</p>
+                    <div class="section">
+                        <ngx-click-to-edit [value]="'Some text'"></ngx-click-to-edit>
+                    </div>
+                    <div class="section" id="markup">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item active">
+                                    <a class="nav-link active" href="javascript:void(0);">
+                                        <span>template</span>
+                                    </a>
+                                </li><li class="nav-item">
+                                    <a class="nav-link" href="javascript:void(0);">
+                                        <span>component</span>
+                                    </a>
+                                </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="template" class="active tab-pane"></div>
+                                    <div heading="component" class="tab-pane"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

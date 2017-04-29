@@ -1,0 +1,7 @@
+.idea/
+.DS_Store
+node_modules/
+coverage/
+npm-debug.log
+/.idea/
+/ngx-click-to-edit.iml

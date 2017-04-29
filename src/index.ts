@@ -1,0 +1,1 @@
+export * from './ngx-click-to-edit.component';
