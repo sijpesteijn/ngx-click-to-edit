@@ -1,14 +1,14 @@
 # ngx delete confirm
-[![Build Status](https://travis-ci.org/sijpesteijn/ngx-delete-confirm.svg?branch=master)](https://travis-ci.org/sijpesteijn/ngx-delete-confirm)
-[![codecov](https://codecov.io/gh/sijpesteijn/ngx-delete-confirm/branch/master/graph/badge.svg)](https://codecov.io/gh/sijpesteijn/ngx-delete-confirm)
-[![npm version](https://badge.fury.io/js/ngx-delete-confirm.svg)](http://badge.fury.io/js/ngx-delete-confirm)
-[![devDependency Status](https://david-dm.org/sijpesteijn/ngx-delete-confirm/dev-status.svg)](https://david-dm.org/sijpesteijn/ngx-delete-confirm?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/sijpesteijn/ngx-delete-confirm.svg)](https://github.com/sijpesteijn/ngx-delete-confirm/issues)
-[![GitHub stars](https://img.shields.io/github/stars/sijpesteijn/ngx-delete-confirm.svg)](https://github.com/sijpesteijn/ngx-delete-confirm/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/sijpesteijn/ngx-delete-confirm/master/LICENSE)
+[![Build Status](https://travis-ci.org/sijpesteijn/ngx-click-to-edit.svg?branch=master)](https://travis-ci.org/sijpesteijn/ngx-click-to-edit)
+[![codecov](https://codecov.io/gh/sijpesteijn/ngx-click-to-edit/branch/master/graph/badge.svg)](https://codecov.io/gh/sijpesteijn/ngx-click-to-edit)
+[![npm version](https://badge.fury.io/js/ngx-click-to-edit.svg)](http://badge.fury.io/js/ngx-click-to-edit)
+[![devDependency Status](https://david-dm.org/sijpesteijn/ngx-click-to-edit/dev-status.svg)](https://david-dm.org/sijpesteijn/ngx-click-to-edit?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/sijpesteijn/ngx-click-to-edit.svg)](https://github.com/sijpesteijn/ngx-click-to-edit/issues)
+[![GitHub stars](https://img.shields.io/github/stars/sijpesteijn/ngx-click-to-edit.svg)](https://github.com/sijpesteijn/ngx-click-to-edit/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/sijpesteijn/ngx-click-to-edit/master/LICENSE)
 
 ## Demo
-https://sijpesteijn.github.io/ngx-delete-confirm/
+https://sijpesteijn.github.io/ngx-click-to-edit/
 
 ## Table of contents
 
@@ -26,14 +26,14 @@ https://sijpesteijn.github.io/ngx-delete-confirm/
 
 Install through npm:
 ```
-npm install --save ngx-delete-confirm
+npm install --save ngx-click-to-edit
 ```
 
 Then include in your apps module:
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
-import { ngxDeleteConfirmModule } from 'ngx-delete-confirm';
+import { ngxDeleteConfirmModule } from 'ngx-click-to-edit';
 
 @NgModule({
   imports: [
@@ -48,16 +48,16 @@ Finally use in one of your apps components:
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<ngx-delete-confirm></ngx-delete-confirm>'
+  template: '<ngx-click-to-edit></ngx-click-to-edit>'
 })
 export class MyComponent {}
 ```
 
-You may also find it useful to view the [demo source](https://github.com/sijpesteijn/ngx-delete-confirm/blob/master/demo/demo.component.ts).
+You may also find it useful to view the [demo source](https://github.com/sijpesteijn/ngx-click-to-edit/blob/master/demo/demo.component.ts).
 
 ### Usage without a module bundler
 ```
-<script src="node_modules/ngx-delete-confirm/bundles/ngx-delete-confirm.umd.js"></script>
+<script src="node_modules/ngx-click-to-edit/bundles/ngx-click-to-edit.umd.js"></script>
 <script>
     // everything is exported ngxDeleteConfirm namespace
 </script>
@@ -65,7 +65,7 @@ You may also find it useful to view the [demo source](https://github.com/sijpest
 
 ## Documentation
 All documentation is auto-generated from the source via [compodoc](https://compodoc.github.io/compodoc/) and can be viewed here:
-https://sijpesteijn.github.io/ngx-delete-confirm/docs/
+https://sijpesteijn.github.io/ngx-click-to-edit/docs/
 
 ## Development
 
