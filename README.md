@@ -1,4 +1,4 @@
-# ngx delete confirm
+# ngx click to edit
 [![Build Status](https://travis-ci.org/sijpesteijn/ngx-click-to-edit.svg?branch=master)](https://travis-ci.org/sijpesteijn/ngx-click-to-edit)
 [![codecov](https://codecov.io/gh/sijpesteijn/ngx-click-to-edit/branch/master/graph/badge.svg)](https://codecov.io/gh/sijpesteijn/ngx-click-to-edit)
 [![npm version](https://badge.fury.io/js/ngx-click-to-edit.svg)](http://badge.fury.io/js/ngx-click-to-edit)
@@ -59,7 +59,7 @@ You may also find it useful to view the [demo source](https://github.com/sijpest
 ```
 <script src="node_modules/ngx-click-to-edit/bundles/ngx-click-to-edit.umd.js"></script>
 <script>
-    // everything is exported ngxDeleteConfirm namespace
+    // everything is exported ngxClickToEdit namespace
 </script>
 ```
 
