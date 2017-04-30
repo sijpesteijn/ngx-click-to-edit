@@ -8,23 +8,23 @@ import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/
 export class NgxClickToEditComponent implements AfterViewInit {
     @Input('min') min: number;
     @Input('max') max: number;
-    @Input('field') field: string           = 'field';
-    @Input('unit') unit: string             = '';
-    @Input('full') full: boolean            = false;
+    @Input('field') field: string              = 'field';
+    @Input('unit') unit: string                = '';
+    @Input('full') full: boolean               = false;
     @Input('hideTrigger') hideTrigger: boolean = false;
-    @Input('type') type: string             = 'string';
-                  show: boolean             = false;
-                  value: any;
+    @Input('type') type: string                = 'string';
+                  show: boolean                = false;
+                  value: any                   = '';
 
     @Input('value')
-    set setField(field: string) {
-        this.value = field;
+    set theValue(value: string) {
+        this.value    = value;
         this.original = this.value;
     }
+
     private original: any;
     @Output()
-    private onSave: EventEmitter<any>         = new EventEmitter();
-    private valid: boolean = true;
+    private onSave: EventEmitter<any> = new EventEmitter();
 
     ngAfterViewInit(): void {
         if (typeof this.value === 'string') {
@@ -47,12 +47,8 @@ export class NgxClickToEditComponent implements AfterViewInit {
     }
 
     cancelEditable(): void {
-        this.show = false;
+        this.show  = false;
         this.value = this.original;
-    }
-
-    validate(value: any): void {
-        this.valid = true;
     }
 
     onKey(event: KeyboardEvent): void {
@@ -62,9 +58,7 @@ export class NgxClickToEditComponent implements AfterViewInit {
     }
 
     callSave(): void {
-        if (this.valid) {
-            this.onSave.emit({field: this.field, value: this.value});
-            this.show = false;
-        }
+        this.onSave.emit({ field: this.field, value: this.value });
+        this.show = false;
     }
 }

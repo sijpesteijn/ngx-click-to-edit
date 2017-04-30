@@ -61,15 +61,3 @@ input {
 .ndv-active {
     background-color: transparent;
 }
-.ng-invalid {
-    background: #ffb8b8;
-}
-.err-bubble {
-    position: absolute;
-    margin: 16px 100px;
-    border: 1px solid red;
-    font-size: 14px;
-    background: #ffb8b8;
-    padding: 10px;
-    border-radius: 7px;
-}

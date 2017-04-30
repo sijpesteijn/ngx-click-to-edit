@@ -1,11 +1,7 @@
 <div class="click-to-edit">
     <div class='ndv-comp' [ngClass]="{'ndv-active':show}">
-        <input *ngIf='show && type === "string"' [ngClass]="{'ng-invalid': invalid}" (ngModelChange)="validate($event)"
-               type='text' [(ngModel)]='value' (keyup)="onKey($event)"/>
-        <input *ngIf='show && type === "number"' [ngClass]="{'ng-invalid': invalid}" (ngModelChange)="validate($event)"
-               type='number' min="min" max="max" [(ngModel)]='value' (keyup)="onKey($event)"/>
-
-        <div class='err-bubble' *ngIf="invalid">{{error || " must contain " + min + " to -" + max +" chars."}}</div>
+        <input *ngIf='show && type === "string"' type='text' [(ngModel)]='value' (keyup)="onKey($event)"/>
+        <input *ngIf='show && type === "number"' type='number' min="min" max="max" [(ngModel)]='value' (keyup)="onKey($event)"/>
 
         <div *ngIf='!show'>
             <div *ngIf="hideTrigger === false">

@@ -33,11 +33,11 @@ Then include in your apps module:
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
-import { ngxDeleteConfirmModule } from 'ngx-click-to-edit';
+import { ngxClickToEditModule } from 'ngx-click-to-edit';
 
 @NgModule({
   imports: [
-    ngxDeleteConfirmModule.forRoot()
+    ngxClickToEditModule.forRoot()
   ]
 })
 export class MyModule {}

@@ -27,7 +27,7 @@
     "release": "npm run release:git && npm run release:npm",
     "postrelease": "npm run build:clean && npm run gh-pages",
     "commitmsg": "validate-commit-msg",
-    "codecov": "cat coverage/lcov.info | codecov"
+    "codecov": "cat coverage/lcov.info | codecov -t 5593e85e-4686-4a99-b0ad-7178ee132bc3"
   },
   "repository": {
     "type": "git",
