@@ -108,12 +108,12 @@ var NgxClickToEditComponent = (function () {
         this.hideTrigger = false;
         this.type = 'string';
         this.show = false;
+        this.value = '';
         this.onSave = new core_1.EventEmitter();
-        this.valid = true;
     }
-    Object.defineProperty(NgxClickToEditComponent.prototype, "setField", {
-        set: function (field) {
-            this.value = field;
+    Object.defineProperty(NgxClickToEditComponent.prototype, "theValue", {
+        set: function (value) {
+            this.value = value;
             this.original = this.value;
         },
         enumerable: true,
@@ -142,19 +142,14 @@ var NgxClickToEditComponent = (function () {
         this.show = false;
         this.value = this.original;
     };
-    NgxClickToEditComponent.prototype.validate = function (value) {
-        this.valid = true;
-    };
     NgxClickToEditComponent.prototype.onKey = function (event) {
         if (event.key === 'Enter') {
             this.callSave();
         }
     };
     NgxClickToEditComponent.prototype.callSave = function () {
-        if (this.valid) {
-            this.onSave.emit({ field: this.field, value: this.value });
-            this.show = false;
-        }
+        this.onSave.emit({ field: this.field, value: this.value });
+        this.show = false;
     };
     return NgxClickToEditComponent;
 }());
@@ -190,7 +185,7 @@ __decorate([
     core_1.Input('value'),
     __metadata("design:type", String),
     __metadata("design:paramtypes", [String])
-], NgxClickToEditComponent.prototype, "setField", null);
+], NgxClickToEditComponent.prototype, "theValue", null);
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
@@ -2156,7 +2151,7 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, ".click-to-edit {\n}\n\n.selectable {\n    cursor: pointer;\n}\n\n.ndv-comp {\n    position: relative;\n    overflow: hidden;\n    min-width: 20px;\n    border-radius: 3px;\n    cursor: default;\n}\n\n.fa-pencil {\n    float: left;\n    padding-top: 2px;\n}\n\n.click-to-edit-content {\n    float: left;\n}\n\n.click-to-edit-value {\n    float: left;\n    min-width: 33px;\n    padding: 0 2px 0 8px;\n    text-align: right;\n}\n\n.click-to-edit-unit {\n    float: left;\n}\n\n.active-ndv {\n    background-color: transparent;\n}\ninput {\n    border-radius: 5px;\n    box-shadow: none;\n    min-width: 5px;\n    color: #000;\n}\n.ndv-buttons {\n    background-color: transparent;\n    border-top: none;\n    border-radius: 0 0 3px 3px;\n    box-shadow: 0 3px 6px rgba(111,111,111,0.2);\n    outline: none;\n    padding: 3px;\n    position: absolute;\n    margin-left: 6px;\n    z-index: 1;\n}\n.ndv-comp:hover {\n}\n.ndv-save {\n    margin-right:3px;\n}\n.ndv-active {\n    background-color: transparent;\n}\n.ng-invalid {\n    background: #ffb8b8;\n}\n.err-bubble {\n    position: absolute;\n    margin: 16px 100px;\n    border: 1px solid red;\n    font-size: 14px;\n    background: #ffb8b8;\n    padding: 10px;\n    border-radius: 7px;\n}", ""]);
+exports.push([module.i, ".click-to-edit {\n}\n\n.selectable {\n    cursor: pointer;\n}\n\n.ndv-comp {\n    position: relative;\n    overflow: hidden;\n    min-width: 20px;\n    border-radius: 3px;\n    cursor: default;\n}\n\n.fa-pencil {\n    float: left;\n    padding-top: 2px;\n}\n\n.click-to-edit-content {\n    float: left;\n}\n\n.click-to-edit-value {\n    float: left;\n    min-width: 33px;\n    padding: 0 2px 0 8px;\n    text-align: right;\n}\n\n.click-to-edit-unit {\n    float: left;\n}\n\n.active-ndv {\n    background-color: transparent;\n}\ninput {\n    border-radius: 5px;\n    box-shadow: none;\n    min-width: 5px;\n    color: #000;\n}\n.ndv-buttons {\n    background-color: transparent;\n    border-top: none;\n    border-radius: 0 0 3px 3px;\n    box-shadow: 0 3px 6px rgba(111,111,111,0.2);\n    outline: none;\n    padding: 3px;\n    position: absolute;\n    margin-left: 6px;\n    z-index: 1;\n}\n.ndv-comp:hover {\n}\n.ndv-save {\n    margin-right:3px;\n}\n.ndv-active {\n    background-color: transparent;\n}", ""]);
 
 // exports
 
@@ -2247,7 +2242,7 @@ function toComment(sourceMap) {
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"click-to-edit\">\n    <div class='ndv-comp' [ngClass]=\"{'ndv-active':show}\">\n        <input *ngIf='show && type === \"string\"' [ngClass]=\"{'ng-invalid': invalid}\" (ngModelChange)=\"validate($event)\"\n               type='text' [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n        <input *ngIf='show && type === \"number\"' [ngClass]=\"{'ng-invalid': invalid}\" (ngModelChange)=\"validate($event)\"\n               type='number' min=\"min\" max=\"max\" [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n\n        <div class='err-bubble' *ngIf=\"invalid\">{{error || \" must contain \" + min + \" to -\" + max +\" chars.\"}}</div>\n\n        <div *ngIf='!show'>\n            <div *ngIf=\"hideTrigger === false\">\n                <div #ref class=\"click-to-edit-content selectable\" (click)='makeEditable(\"trigger\")'><ng-content></ng-content></div>\n                <i class=\"fa fa-pencil selectable\" (click)='makeEditable(\"trigger\")' *ngIf=\"ref.childNodes.length == 0\"></i>\n            </div>\n            <div class=\"click-to-edit-value\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"value\")' [innerHTML]=\"value || 'empty'\"></div>\n            <div class=\"click-to-edit-unit\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"unit\")' *ngIf=\"unit !== ''\" [innerHTML]=\"unit\"></div>\n        </div>\n    </div>\n    <div class='ndv-buttons' *ngIf='show'>\n        <button class='btn-x-sm' (click)='callSave()'><i class=\"fa fa-check\"></i></button>\n        <button class='btn-x-sm' (click)='cancelEditable()'><i class=\"fa fa-times\"></i></button>\n    </div>\n</div>";
+module.exports = "<div class=\"click-to-edit\">\n    <div class='ndv-comp' [ngClass]=\"{'ndv-active':show}\">\n        <input *ngIf='show && type === \"string\"' type='text' [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n        <input *ngIf='show && type === \"number\"' type='number' min=\"min\" max=\"max\" [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n\n        <div *ngIf='!show'>\n            <div *ngIf=\"hideTrigger === false\">\n                <div #ref class=\"click-to-edit-content selectable\" (click)='makeEditable(\"trigger\")'><ng-content></ng-content></div>\n                <i class=\"fa fa-pencil selectable\" (click)='makeEditable(\"trigger\")' *ngIf=\"ref.childNodes.length == 0\"></i>\n            </div>\n            <div class=\"click-to-edit-value\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"value\")' [innerHTML]=\"value || 'empty'\"></div>\n            <div class=\"click-to-edit-unit\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"unit\")' *ngIf=\"unit !== ''\" [innerHTML]=\"unit\"></div>\n        </div>\n    </div>\n    <div class='ndv-buttons' *ngIf='show'>\n        <button class='btn-x-sm' (click)='callSave()'><i class=\"fa fa-check\"></i></button>\n        <button class='btn-x-sm' (click)='cancelEditable()'><i class=\"fa fa-times\"></i></button>\n    </div>\n</div>";
 
 /***/ }),
 /* 8 */

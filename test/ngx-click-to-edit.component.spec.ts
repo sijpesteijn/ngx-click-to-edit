@@ -24,10 +24,6 @@ describe('click to edit component', () => {
         this.element = this.fixture.nativeElement;
     });
 
-    beforeEach(async(() => {
-        TestBed.compileComponents();
-    }));
-
     it('should show default', () => {
         expect(this.component.value).toEqual('');
         expect(this.component.min).toBeUndefined();
@@ -89,8 +85,8 @@ describe('click to edit component', () => {
     });
 
     it('should be value selectable when full=false and hideTrigger=true ', () => {
-        this.component.unit = 'm/s';
-        this.component.full = true;
+        this.component.unit        = 'm/s';
+        this.component.full        = true;
         this.component.hideTrigger = true;
         this.fixture.detectChanges();
         expect(this.component.value).toEqual('');
@@ -109,10 +105,18 @@ describe('click to edit component', () => {
         expect(this.element.querySelector('.click-to-edit-value').className.split(' ').indexOf('selectable')).toBeGreaterThan(-1);
         expect(this.element.querySelectorAll('.click-to-edit-unit').length).toBe(1);
         expect(this.element.querySelector('.click-to-edit-unit').className.split(' ').indexOf('selectable')).toBeGreaterThan(-1);
+        this.component.makeEditable('whatever');
+        expect(this.component.show).toBe(true);
+
+        this.component.show = false;
+        this.component.hideTrigger = false;
+        this.component.makeEditable('whatever');
+        expect(this.component.show).toBe(true);
     });
 
+
     it('should show edit field when clicked', () => {
-        this.component.value                          = 'Some text';
+        this.component.value = 'Some text';
         this.component.makeEditable('trigger');
         this.fixture.detectChanges();
         expect(this.component.value).toEqual('Some text');
@@ -135,4 +139,9 @@ describe('click to edit component', () => {
         expect(this.element.querySelectorAll('.click-to-edit-unit').length).toBe(0);
     });
 
+    xit('should show numeric field', () => {
+        this.component.value = 2;
+        this.fixture.detectChanges();
+        expect(this.component.type).toBe('number');
+    });
 });
