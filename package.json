@@ -35,7 +35,9 @@
   },
   "keywords": [
     "angular2",
-    "angular"
+    "angular",
+    "click",
+    "edit"
   ],
   "author": "gijs.sijpesteijn",
   "license": "MIT",
