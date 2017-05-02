@@ -36,7 +36,6 @@ export class NgxClickToEditComponent implements AfterViewInit {
     }
 
     makeEditable(field: string): void {
-        console.log('Filed ', field);
         if (this.hideTrigger === true) {
             this.show = true;
         }
