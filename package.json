@@ -10,7 +10,7 @@
     "clean": "npm run rimraf -- bundles",
     "rimraf": "rimraf",
     "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
-    "build:demo": "webpack -p",
+    "build:demo": "webpack --config webpack.config.demo.ts",
     "build:umd": "webpack --config webpack.config.umd.ts",
     "build:ngc": "ngc -p tsconfig-ngc.json",
     "build:dist": "npm run build:umd",

@@ -7,8 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/sijpesteijn/ngx-click-to-edit.svg)](https://github.com/sijpesteijn/ngx-click-to-edit/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/sijpesteijn/ngx-click-to-edit/master/LICENSE)
 
-## Demo
-https://sijpesteijn.github.io/ngx-click-to-edit/
+## [Demo](https://sijpesteijn.github.io/ngx-click-to-edit/standalone_demo)
 
 ## Table of contents
 

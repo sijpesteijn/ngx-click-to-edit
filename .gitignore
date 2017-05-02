@@ -5,3 +5,5 @@ coverage/
 npm-debug.log
 /.idea/
 /ngx-click-to-edit.iml
+/"fontawesome-webfont-*"
+/main-*.js
