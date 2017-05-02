@@ -26,16 +26,6 @@ describe('click to edit component', () => {
         this.element = this.fixture.nativeElement;
     });
 
-    let editVisible = function (visible:boolean) {
-        if (visible) {
-            expect(this.element.querySelectorAll('input').length).toBe(1);
-            expect(this.element.querySelectorAll('.ndv-buttons').length).toBe(1);
-        } else {
-            expect(this.element.querySelectorAll('input').length).toBe(0);
-            expect(this.element.querySelectorAll('.ndv-buttons').length).toBe(0);
-        }
-    };
-
     it('should show default', () => {
         expect(this.component.value).toEqual('Some text');
         expect(this.component.min).toBeUndefined();
@@ -46,7 +36,8 @@ describe('click to edit component', () => {
         expect(this.component.full).toBeFalsy();
         expect(this.component.show).toBeFalsy();
         expect(this.component.hideTrigger).toBeFalsy();
-        editVisible.call(this, false);
+        expect(this.element.querySelectorAll('input').length).toBe(0);
+        expect(this.element.querySelectorAll('.ndv-buttons').length).toBe(0);
         expect(this.element.querySelectorAll('i').length).toBe(1);
         expect(this.element.querySelector('i').className.split(' ').indexOf('selectable')).toBeGreaterThan(-1);
         expect(this.element.querySelectorAll('.click-to-edit-value').length).toBe(1);
@@ -98,12 +89,14 @@ describe('click to edit component', () => {
     it('should show the value when I click the cancel button in edit mode', () => {
         this.component.show = true;
         this.fixture.detectChanges();
-        editVisible.call(this, true);
+        expect(this.element.querySelectorAll('input').length).toBe(1);
+        expect(this.element.querySelectorAll('.ndv-buttons').length).toBe(1);
 
         this.component.cancelEditable();
         this.fixture.detectChanges();
         expect(this.component.show).toBe(false);
-        editVisible.call(this, false);
+        expect(this.element.querySelectorAll('input').length).toBe(0);
+        expect(this.element.querySelectorAll('.ndv-buttons').length).toBe(0);
     });
 
     it('should emit the field and value', () => {
@@ -118,7 +111,7 @@ describe('click to edit component', () => {
         this.component.show = true;
         this.fixture.detectChanges();
 
-        let input = this.element.querySelector('input');
+        let input:any = this.element.querySelector('input');
         input.value = 'Other text';
         input.dispatchEvent(new Event('input'));
         input.dispatchEvent(new Event('keyup'));
