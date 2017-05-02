@@ -111,7 +111,7 @@ describe('click to edit component', () => {
         this.component.show = true;
         this.fixture.detectChanges();
 
-        let input:any = this.element.querySelector('input');
+        let input: any = this.element.querySelector('input');
         input.value = 'Other text';
         input.dispatchEvent(new Event('input'));
         input.dispatchEvent(new Event('keyup'));
