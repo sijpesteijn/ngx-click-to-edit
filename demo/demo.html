@@ -41,10 +41,10 @@ No trigger icon:
                     <h2 fragment="usage" id="usage" routerlink=".">Usage</h2>
 
                     <pre>
-                    import &#123; BsDropdownModule &#125; from 'ngx-bootstrap';&#xD;
+                    import &#123; NgxClickToEditModule &#125; from 'ngx-click-to-edit';&#xD;
 
                     @NgModule(&#123;
-                    imports: [BsDropdownModule.forRoot(),...]
+                        imports: [NgxClickToEditModule.forRoot(),...]
                     &#125;)
                     export class AppModule()&#123;&#125;</pre>
 
@@ -54,11 +54,11 @@ No trigger icon:
                         Dropdowns can be triggered from <code> &lt;a&gt;</code> or <code> &lt;button&gt;</code> elements
                         to better fit your potential needs.</p>
 
-                    <h2 fragment="single-button" id="single-button" routerlink=".">Single button dropdowns</h2>
+                    <h2 fragment="single-button" id="default-use" routerlink=".">Default use</h2>
 
-                    <p>Any single <code>.btn</code> can be turned into a dropdown toggle with some markup changes.
-                        Here’s how you can put them to work with either <code> &lt;button&gt; </code> elements:</p>
-                    <div class="section">
+                    <p>Bla <code>.btn</code></p>
+
+                    <div class="section cte-example">
                         <ngx-click-to-edit [value]="'Some text'"></ngx-click-to-edit>
                     </div>
                     <div class="section" id="markup">
@@ -66,18 +66,64 @@ No trigger icon:
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item active">
-                                    <a class="nav-link active" href="javascript:void(0);">
-                                        <span>template</span>
-                                    </a>
-                                </li><li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0);">
-                                        <span>component</span>
-                                    </a>
-                                </li>
+                                        <a class="nav-link active" href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="template" class="active tab-pane"></div>
-                                    <div heading="component" class="tab-pane"></div>
+                                    <div heading="component" class="tab-pane active">
+                                        <pre>
+<ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span
+        class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="pln"> </span><span
+        class="atn">dropdown</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span
+        class="tag">&lt;button</span><span class="pln"> </span><span class="atn">dropdownToggle</span><span
+        class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span
+        class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span
+        class="pun">=</span><span class="atv">"btn btn-primary dropdown-toggle"</span><span class="tag">&gt;</span></li><li
+        class="L2"><span class="pln">    Button dropdown </span><span class="tag">&lt;span</span><span
+        class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span
+        class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L3"><span
+        class="pln">  </span><span class="tag">&lt;/button&gt;</span></li><li class="L4"><span
+        class="pln">  </span><span class="tag">&lt;ul</span><span class="pln"> *</span><span
+        class="atn">dropdownMenu</span><span class="pln"> </span><span class="atn">class</span><span
+        class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="pln"> </span><span
+        class="atn">role</span><span class="pun">=</span><span class="atv">"menu"</span><span
+        class="tag">&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;li</span><span
+        class="pln"> </span><span class="atn">role</span><span class="pun">=</span><span
+        class="atv">"menuitem"</span><span class="tag">&gt;&lt;a</span><span class="pln"> </span><span
+        class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-item"</span><span
+        class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span
+        class="tag">&gt;</span><span class="pln">Action</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li
+        class="L6"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span
+        class="atn">role</span><span class="pun">=</span><span class="atv">"menuitem"</span><span
+        class="tag">&gt;&lt;a</span><span class="pln"> </span><span class="atn">class</span><span
+        class="pun">=</span><span class="atv">"dropdown-item"</span><span class="pln"> </span><span
+        class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="tag">&gt;</span><span
+        class="pln">Another action</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L7"><span
+        class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span
+        class="atn">role</span><span class="pun">=</span><span class="atv">"menuitem"</span><span
+        class="tag">&gt;&lt;a</span><span class="pln"> </span><span class="atn">class</span><span
+        class="pun">=</span><span class="atv">"dropdown-item"</span><span class="pln"> </span><span
+        class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="tag">&gt;</span><span
+        class="pln">Something else here</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L8"><span
+        class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span
+        class="atn">class</span><span class="pun">=</span><span class="atv">"divider dropdown-divider"</span><span
+        class="tag">&gt;&lt;/li&gt;</span></li><li class="L9"><span class="pln">    </span><span
+        class="tag">&lt;li</span><span class="pln"> </span><span class="atn">role</span><span class="pun">=</span><span
+        class="atv">"menuitem"</span><span class="tag">&gt;&lt;a</span><span class="pln"> </span><span
+        class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-item"</span><span
+        class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span
+        class="tag">&gt;</span><span class="pln">Separated link</span><span class="tag">&lt;/a&gt;</span></li><li
+        class="L0"><span class="pln">    </span><span class="tag">&lt;/li&gt;</span></li><li class="L1"><span
+        class="pln">  </span><span class="tag">&lt;/ul&gt;</span></li><li class="L2"><span
+        class="tag">&lt;/div&gt;</span></li></ol></pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>

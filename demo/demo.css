@@ -1,0 +1,23 @@
+.cte-example {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: .2rem;
+}
+
+.tag {
+    color: #D43669;
+}
+
+.atn {
+    color: #31708f;
+}
+
+.pun {
+    color: #7a8b94;
+}
+
+.atv {
+    color: #647f11;
+}

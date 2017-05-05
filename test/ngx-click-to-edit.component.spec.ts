@@ -19,7 +19,6 @@ describe('click to edit component', () => {
             ]
         });
         this.fixture = TestBed.createComponent(NgxClickToEditComponent);
-        this.fixture.detectChanges();
         this.component = this.fixture.componentInstance;
         this.component.value = 'Some text';
         expect(this.component).toBeDefined();
@@ -27,6 +26,8 @@ describe('click to edit component', () => {
     });
 
     it('should show default', () => {
+        this.fixture.detectChanges();
+        this.component.makeEditable('trigger');
         expect(this.component.value).toEqual('Some text');
         expect(this.component.min).toBeUndefined();
         expect(this.component.max).toBeUndefined();
@@ -34,7 +35,7 @@ describe('click to edit component', () => {
         expect(this.component.field).toEqual('field');
         expect(this.component.unit).toEqual('');
         expect(this.component.full).toBeFalsy();
-        expect(this.component.show).toBeFalsy();
+        expect(this.component.show).toBeTruthy();
         expect(this.component.hideTrigger).toBeFalsy();
         expect(this.element.querySelectorAll('input').length).toBe(0);
         expect(this.element.querySelectorAll('.ndv-buttons').length).toBe(0);
@@ -58,6 +59,8 @@ describe('click to edit component', () => {
         this.component.unit = 'unit';
         this.component.full = true;
         this.fixture.detectChanges();
+        this.component.makeEditable('whatever');
+        expect(this.component.show).toBe(true);
         expect(this.element.querySelector('.click-to-edit-value').className.split(' ').indexOf('selectable')).toBeGreaterThan(-1);
         expect(this.element.querySelectorAll('.click-to-edit-unit').length).toBe(1);
         expect(this.element.querySelector('.click-to-edit-unit').className.split(' ').indexOf('selectable')).toBeGreaterThan(-1);
@@ -120,9 +123,20 @@ describe('click to edit component', () => {
         expect(this.component.value).toEqual('Other text');
     });
 
-    xit('should show numeric field', () => {
-        this.component.value = 2;
-        this.fixture.detectChanges();
-        expect(this.component.type).toBe('number');
+    it('should show numeric field', () => {
+        let fixture = TestBed.createComponent(NgxClickToEditComponent);
+        let component = fixture.componentInstance;
+        component.value = 2;
+        fixture.detectChanges();
+        expect(component.type).toBe('number');
     });
+
+    it('should allow me to set the value', () => {
+        this.fixture.detectChanges();
+        this.component.theValue = 'Other text';
+
+        expect(this.component.value).toEqual('Other text');
+    });
+
+
 });
