@@ -124,8 +124,8 @@ describe('click to edit component', () => {
     });
 
     it('should show numeric field', () => {
-        let fixture = TestBed.createComponent(NgxClickToEditComponent);
-        let component = fixture.componentInstance;
+        let fixture: ComponentFixture<NgxClickToEditComponent> = TestBed.createComponent(NgxClickToEditComponent);
+        let component:NgxClickToEditComponent = fixture.componentInstance;
         component.value = 2;
         fixture.detectChanges();
         expect(component.type).toBe('number');
