@@ -1,18 +1,3 @@
-Default (string):
-<ngx-click-to-edit [value]="'Some text'"></ngx-click-to-edit>
-Full select:
-<ngx-click-to-edit [value]="'Bla'" [full]="true"></ngx-click-to-edit>
-Number:
-<ngx-click-to-edit [type]="number" [value]="9" [min]="0" [max]="10"></ngx-click-to-edit>
-Number with unit:
-<ngx-click-to-edit [type]="number" [value]="9" [min]="0" [max]="10" [unit]="'m/s'"></ngx-click-to-edit>
-With ng-content:
-<ngx-click-to-edit [value]="'Bla'">edit</ngx-click-to-edit>
-Full select with ng-content:
-<ngx-click-to-edit [value]="'Bla'" [full]="true">edit</ngx-click-to-edit>
-No trigger icon:
-<ngx-click-to-edit [value]="'Bla'" [hideTrigger]="true"></ngx-click-to-edit>
-
 <div class="row">
     <div class="col-md-10 col-xs-12 col-md-offset-1 push-md-1">
         <div class="content-header">
@@ -24,16 +9,20 @@ No trigger icon:
             <div class="section" id="example">
                 <div class="item">
 
-                    <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re
-                        made interactive with the included dropdown directives.</p>
+                    <p>Click to edit is an editable text component.</p>
 
                     <h2>Contents</h2>
                     <ul>
                         <li><a fragment="examples" routerlink="." href="#usage">Usage</a></li>
                         <li><a fragment="examples" routerlink="." href="#examples">Examples</a>
                             <ul>
-                                <li><a fragment="single-button" routerlink="." href="#/dropdowns#single-button">Single
-                                    button dropdowns</a></li>
+                                <li><a fragment="default" routerlink="." href="#default">Default</a></li>
+                                <li><a fragment="full" routerlink="." href="#full">Fully select</a></li>
+                                <li><a fragment="number" routerlink="." href="#number">Numeric</a></li>
+                                <li><a fragment="number_unit" routerlink="." href="#number_unit">Numeric with unit</a></li>
+                                <li><a fragment="ng_content" routerlink="." href="#ng_content">With ng-content</a></li>
+                                <li><a fragment="fully_with_ng_content" routerlink="." href="#fully_with_ng_content">Fully selectable with ng-content</a></li>
+                                <li><a fragment="no_icon" routerlink="." href="#no_icon">No trigger icon</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -41,12 +30,12 @@ No trigger icon:
                     <h2 fragment="usage" id="usage" routerlink=".">Usage</h2>
 
                     <pre>
-                    import &#123; NgxClickToEditModule &#125; from 'ngx-click-to-edit';&#xD;
+            import &#123; NgxClickToEditModule &#125; from 'ngx-click-to-edit';&#xD;
 
-                    @NgModule(&#123;
-                        imports: [NgxClickToEditModule.forRoot(),...]
-                    &#125;)
-                    export class AppModule()&#123;&#125;</pre>
+            @NgModule(&#123;
+                imports: [NgxClickToEditModule.forRoot(),...]
+            &#125;)
+            export class AppModule()&#123;&#125;</pre>
 
                     <h2 fragment="examples" id="examples" routerlink=".">Examples</h2>
                     <p>Wrap the dropdown’s toggle (your button or link) and the dropdown menu within
@@ -54,75 +43,506 @@ No trigger icon:
                         Dropdowns can be triggered from <code> &lt;a&gt;</code> or <code> &lt;button&gt;</code> elements
                         to better fit your potential needs.</p>
 
-                    <h2 fragment="single-button" id="default-use" routerlink=".">Default use</h2>
+                    <h2 fragment="default" id="default" routerlink=".">Default use</h2>
 
-                    <p>Bla <code>.btn</code></p>
+                    <p>Default usage.</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [value]="'Some text'"></ngx-click-to-edit>
+                        <ngx-click-to-edit [value]="'Limpsum'" (onSave)="showValue($event)"></ngx-click-to-edit>
                     </div>
-                    <div class="section" id="markup">
+                    <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item active">
-                                        <a class="nav-link active" href="javascript:void(0);">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="javascript:void(0);">
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" class="tab-pane active">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
                                         <pre>
-<ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span
-        class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="pln"> </span><span
-        class="atn">dropdown</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span
-        class="tag">&lt;button</span><span class="pln"> </span><span class="atn">dropdownToggle</span><span
-        class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span
-        class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span
-        class="pun">=</span><span class="atv">"btn btn-primary dropdown-toggle"</span><span class="tag">&gt;</span></li><li
-        class="L2"><span class="pln">    Button dropdown </span><span class="tag">&lt;span</span><span
-        class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span
-        class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L3"><span
-        class="pln">  </span><span class="tag">&lt;/button&gt;</span></li><li class="L4"><span
-        class="pln">  </span><span class="tag">&lt;ul</span><span class="pln"> *</span><span
-        class="atn">dropdownMenu</span><span class="pln"> </span><span class="atn">class</span><span
-        class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="pln"> </span><span
-        class="atn">role</span><span class="pun">=</span><span class="atv">"menu"</span><span
-        class="tag">&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;li</span><span
-        class="pln"> </span><span class="atn">role</span><span class="pun">=</span><span
-        class="atv">"menuitem"</span><span class="tag">&gt;&lt;a</span><span class="pln"> </span><span
-        class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-item"</span><span
-        class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span
-        class="tag">&gt;</span><span class="pln">Action</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li
-        class="L6"><span class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span
-        class="atn">role</span><span class="pun">=</span><span class="atv">"menuitem"</span><span
-        class="tag">&gt;&lt;a</span><span class="pln"> </span><span class="atn">class</span><span
-        class="pun">=</span><span class="atv">"dropdown-item"</span><span class="pln"> </span><span
-        class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="tag">&gt;</span><span
-        class="pln">Another action</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L7"><span
-        class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span
-        class="atn">role</span><span class="pun">=</span><span class="atv">"menuitem"</span><span
-        class="tag">&gt;&lt;a</span><span class="pln"> </span><span class="atn">class</span><span
-        class="pun">=</span><span class="atv">"dropdown-item"</span><span class="pln"> </span><span
-        class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="tag">&gt;</span><span
-        class="pln">Something else here</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L8"><span
-        class="pln">    </span><span class="tag">&lt;li</span><span class="pln"> </span><span
-        class="atn">class</span><span class="pun">=</span><span class="atv">"divider dropdown-divider"</span><span
-        class="tag">&gt;&lt;/li&gt;</span></li><li class="L9"><span class="pln">    </span><span
-        class="tag">&lt;li</span><span class="pln"> </span><span class="atn">role</span><span class="pun">=</span><span
-        class="atv">"menuitem"</span><span class="tag">&gt;&lt;a</span><span class="pln"> </span><span
-        class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-item"</span><span
-        class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span
-        class="tag">&gt;</span><span class="pln">Separated link</span><span class="tag">&lt;/a&gt;</span></li><li
-        class="L0"><span class="pln">    </span><span class="tag">&lt;/li&gt;</span></li><li class="L1"><span
-        class="pln">  </span><span class="tag">&lt;/ul&gt;</span></li><li class="L2"><span
-        class="tag">&lt;/div&gt;</span></li></ol></pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"Limpsum"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-default'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 fragment="full" id="full" routerlink=".">Fully selectable</h2>
+
+                    <p>Fully selectable usage.</p>
+
+                    <div class="section cte-example">
+                        <ngx-click-to-edit [value]="'Limpsum'" [full]="true" (onSave)="showValue($event)"></ngx-click-to-edit>
+                    </div>
+                    <div class="section">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
+                                        <pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"Limpsum"</span><span
+                class="pln"> [</span><span
+                class="atn">full</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"true"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-full'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 fragment="number" id="number" routerlink=".">Numeric</h2>
+
+                    <p>Numeric usage.</p>
+
+                    <div class="section cte-example">
+                        <ngx-click-to-edit [type]="number" [value]="9" [min]="-3" [max]="10" (onSave)="showValue($event)"></ngx-click-to-edit>
+                    </div>
+                    <div class="section">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
+                                        <pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">type</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"number"</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"9"</span><span
+                class="pln"> [</span><span
+                class="atn">min</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"-3"</span><span
+                class="pln"> [</span><span
+                class="atn">max</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"10"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-numeric'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 fragment="number_unit" id="number_unit" routerlink=".">Numeric with unit</h2>
+
+                    <p>Numeric with unit</p>
+
+                    <div class="section cte-example">
+                        <ngx-click-to-edit [type]="number" [value]="9" [unit]="'m/s'" [min]="-3" [max]="10" (onSave)="showValue($event)"></ngx-click-to-edit>
+                    </div>
+                    <div class="section">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
+                                        <pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">type</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"number"</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"9"</span><span
+                class="pln"> [</span><span
+                class="atn">unit</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"'m/s'"</span><span
+                class="pln"> [</span><span
+                class="atn">min</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"-3"</span><span
+                class="pln"> [</span><span
+                class="atn">max</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"10"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-numeric_with_unit'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 fragment="ng_content" id="ng_content" routerlink=".">With ng-content</h2>
+
+                    <p>With ng-content</p>
+
+                    <div class="section cte-example">
+                        <ngx-click-to-edit [value]="'Limpsum'" (onSave)="showValue($event)">edit</ngx-click-to-edit>
+                    </div>
+                    <div class="section">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
+                                        <pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"Limpsum"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-ng_content'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 fragment="fully_with_ng_content" id="fully_with_ng_content" routerlink=".">Fully selectable with ng-content</h2>
+
+                    <p>Fully selectable with ng-content</p>
+
+                    <div class="section cte-example">
+                        <ngx-click-to-edit [value]="'Limpsum'" [full]="true" (onSave)="showValue($event)">edit</ngx-click-to-edit>
+                    </div>
+                    <div class="section">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
+                                        <pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"Limpsum"</span><span
+                class="pln"> [</span><span
+                class="atn">full</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"true"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-full_with_ng_content'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 fragment="no_icon" id="no_icon" routerlink=".">No trigger icon</h2>
+
+                    <p>No trigger icon</p>
+
+                    <div class="section cte-example">
+                        <ngx-click-to-edit [value]="'Limpsum'" [hideTrigger]="true" (onSave)="showValue($event)"></ngx-click-to-edit>
+                    </div>
+                    <div class="section">
+                        <div class="item">
+                            <div class="tab-container">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item" [class.active]="isActive('default','template')">
+                                        <a class="nav-link" (click)="activate('default','template')"
+                                           href="javascript:void(0);">
+                                            <span>template</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" [class.active]="isActive('default','component')">
+                                        <a class="nav-link" (click)="activate('default','component')"
+                                           href="javascript:void(0);">
+                                            <span>component</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div heading="component" [class.active]="isActive('default','template')"
+                                         class="tab-pane">
+                                        <pre>
+
+
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+                class="pln"> [</span><span
+                class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"Limpsum"</span><span
+                class="pln"> [</span><span
+                class="atn">noTrigger</span><span class="pln">]</span><span class="pun">=</span><span
+                class="atv">"true"</span><span class="pln"> (</span><span
+                class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+        </ol></pre>
+                                    </div>
+                                    <div heading="component" [class.active]="isActive('default','component')"
+                                         class="tab-pane">
+                                        <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
+                                                class="linenums"><li><span class="kwd">import</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span><span
+                                                class="pln"> </span><span class="typ">Component</span><span
+                                                class="pln"> </span><span class="pun">&#125;</span><span class="pln"> from </span><span
+                                                class="str">'@angular/core'</span><span class="pun">;</span></li><li><span
+                                                class="pln">&nbsp;</span></li><li class="L2"><span
+                                                class="lit">@Component</span><span class="pun">(&#123;</span></li><li><span
+                                                class="pln">  selector</span><span class="pun">:</span><span
+                                                class="pln"> </span><span
+                                                class="str">'demo-click-to-edit-no_trigger_icon'</span><span
+                                                class="pun">,</span></li><li><span
+                                                class="pln">  templateUrl</span><span class="pun">:</span><span
+                                                class="pln"> </span><span class="str">'./default.html'</span></li><li><span
+                                                class="pun">&#125;)</span></li><li class="L6"><span
+                                                class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span
+                                                class="pln"> </span><span
+                                                class="typ">DemoClickToEditDefaultComponent</span><span
+                                                class="pln"> </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">  private showValue($event: any): void </span><span class="pun">&#123;</span></li><li><span
+                                                class="pln">    console.log($event);</span></li><li><span class="pln">  </span><span class="pun">&#125;</span></li><li><span
+                                                class="pun">&#125;</span></li></ol></pre>
                                     </div>
                                 </div>
                             </div>

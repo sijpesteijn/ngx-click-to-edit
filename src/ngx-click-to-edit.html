@@ -1,7 +1,7 @@
 <div class="click-to-edit">
     <div class='ndv-comp' [ngClass]="{'ndv-active':show}">
-        <input *ngIf='show && type === "string"' type='text' [(ngModel)]='value' (keyup)="onKey($event)"/>
-        <input *ngIf='show && type === "number"' type='number' min="min" max="max" [(ngModel)]='value' (keyup)="onKey($event)"/>
+        <input tabindex="-1" *ngIf='show && type === "string"' type='text' [(ngModel)]='value' (keyup)="onKey($event)"/>
+        <input tabindex="-1" *ngIf='show && type === "number"' type='number' [min]="min" [max]="max" [(ngModel)]='value' (keyup)="onKey($event)"/>
 
         <div *ngIf='!show'>
             <div *ngIf="hideTrigger === false">

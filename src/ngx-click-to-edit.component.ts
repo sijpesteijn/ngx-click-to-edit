@@ -55,6 +55,9 @@ export class NgxClickToEditComponent implements AfterViewInit {
         if (event.key === 'Enter') {
             this.callSave();
         }
+        if (event.key === 'Escape') {
+            this.cancelEditable();
+        }
     }
 
     callSave(): void {

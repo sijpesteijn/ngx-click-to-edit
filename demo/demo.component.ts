@@ -7,4 +7,23 @@ require('font-awesome/css/font-awesome.css');
     template: require('./demo.html'),
     styles: [require('./demo.css')]
 })
-export class DemoComponent {}
+export class DemoComponent {
+    private sections: Map<string, string> = new Map<string, string>();
+
+    constructor() {
+        this.sections.set('default', 'template');
+        this.sections.set('full', 'template');
+        this.sections.set('numeric', 'template');
+    }
+
+    private activate(section: string, tab: string): void {
+        this.sections.set(section, tab);
+    }
+    private isActive(section: string, tab: string): boolean {
+        return this.sections.get(section) === tab;
+    }
+
+    private showValue($event: any): void {
+        console.log($event);
+    }
+}
