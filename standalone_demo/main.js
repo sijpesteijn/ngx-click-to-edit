@@ -184,7 +184,7 @@ $exports.store = store;
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(1)
-  , IE8_DOM_DEFINE = __webpack_require__(108)
+  , IE8_DOM_DEFINE = __webpack_require__(109)
   , toPrimitive    = __webpack_require__(26)
   , dP             = Object.defineProperty;
 
@@ -288,7 +288,7 @@ var pIE            = __webpack_require__(51)
   , toIObject      = __webpack_require__(11)
   , toPrimitive    = __webpack_require__(26)
   , has            = __webpack_require__(10)
-  , IE8_DOM_DEFINE = __webpack_require__(108)
+  , IE8_DOM_DEFINE = __webpack_require__(109)
   , gOPD           = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(7) ? gOPD : function getOwnPropertyDescriptor(O, P){
@@ -419,11 +419,11 @@ module.exports = function(method, arg){
 /* WEBPACK VAR INJECTION */(function(global) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(373);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Class", function() { return Class; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPlatform", function() { return createPlatform; });
@@ -14709,7 +14709,7 @@ module.exports = function(it, S){
 "use strict";
 
 var root_1 = __webpack_require__(49);
-var toSubscriber_1 = __webpack_require__(378);
+var toSubscriber_1 = __webpack_require__(379);
 var observable_1 = __webpack_require__(139);
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
@@ -14854,10 +14854,10 @@ exports.Observable = Observable;
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map     = __webpack_require__(125)
+var Map     = __webpack_require__(126)
   , $export = __webpack_require__(0)
   , shared  = __webpack_require__(64)('metadata')
-  , store   = shared.store || (shared.store = new (__webpack_require__(128)));
+  , store   = shared.store || (shared.store = new (__webpack_require__(129)));
 
 var getOrCreateMetadataMap = function(target, targetKey, create){
   var targetMetadata = store.get(target);
@@ -14912,7 +14912,7 @@ module.exports = {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(1)
-  , dPs         = __webpack_require__(114)
+  , dPs         = __webpack_require__(115)
   , enumBugKeys = __webpack_require__(73)
   , IE_PROTO    = __webpack_require__(88)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
@@ -14989,7 +14989,7 @@ if(__webpack_require__(7)){
     , toIndex             = __webpack_require__(43)
     , toPrimitive         = __webpack_require__(26)
     , has                 = __webpack_require__(10)
-    , same                = __webpack_require__(121)
+    , same                = __webpack_require__(122)
     , classof             = __webpack_require__(36)
     , isObject            = __webpack_require__(4)
     , toObject            = __webpack_require__(9)
@@ -15008,7 +15008,7 @@ if(__webpack_require__(7)){
     , $iterDetect         = __webpack_require__(61)
     , setSpecies          = __webpack_require__(42)
     , arrayFill           = __webpack_require__(70)
-    , arrayCopyWithin     = __webpack_require__(101)
+    , arrayCopyWithin     = __webpack_require__(102)
     , $DP                 = __webpack_require__(6)
     , $GOPD               = __webpack_require__(15)
     , dP                  = $DP.f
@@ -15514,7 +15514,7 @@ var meta = module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(116)
+var $keys       = __webpack_require__(117)
   , enumBugKeys = __webpack_require__(73);
 
 module.exports = Object.keys || function keys(O){
@@ -15575,7 +15575,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(24)
-  , call        = __webpack_require__(110)
+  , call        = __webpack_require__(111)
   , isArrayIter = __webpack_require__(77)
   , anObject    = __webpack_require__(1)
   , toLength    = __webpack_require__(8)
@@ -15617,7 +15617,7 @@ module.exports = false;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys      = __webpack_require__(116)
+var $keys      = __webpack_require__(117)
   , hiddenKeys = __webpack_require__(73).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
@@ -15748,7 +15748,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var isFunction_1 = __webpack_require__(142);
 var Subscription_1 = __webpack_require__(66);
 var Observer_1 = __webpack_require__(136);
-var rxSubscriber_1 = __webpack_require__(99);
+var rxSubscriber_1 = __webpack_require__(100);
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -16445,9 +16445,9 @@ module.exports = {
 var isArray_1 = __webpack_require__(141);
 var isObject_1 = __webpack_require__(143);
 var isFunction_1 = __webpack_require__(142);
-var tryCatch_1 = __webpack_require__(379);
+var tryCatch_1 = __webpack_require__(380);
 var errorObject_1 = __webpack_require__(140);
-var UnsubscriptionError_1 = __webpack_require__(375);
+var UnsubscriptionError_1 = __webpack_require__(376);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -25480,7 +25480,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 
 "use strict";
 
-var path      = __webpack_require__(120)
+var path      = __webpack_require__(121)
   , invoke    = __webpack_require__(57)
   , aFunction = __webpack_require__(12);
 module.exports = function(/* ...pargs */){
@@ -25995,7 +25995,7 @@ exports[DATA_VIEW] = $DataView;
 var global         = __webpack_require__(2)
   , core           = __webpack_require__(13)
   , LIBRARY        = __webpack_require__(39)
-  , wksExt         = __webpack_require__(123)
+  , wksExt         = __webpack_require__(124)
   , defineProperty = __webpack_require__(6).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -26046,6 +26046,88 @@ addToUnscopables('entries');
 /* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(Buffer) {/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap) {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+  var base64 = new Buffer(JSON.stringify(sourceMap)).toString('base64');
+  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+  return '/*# ' + data + ' */';
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(158).Buffer))
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 var __extends = (this && this.__extends) || function (d, b) {
@@ -26056,9 +26138,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(27);
 var Subscriber_1 = __webpack_require__(48);
 var Subscription_1 = __webpack_require__(66);
-var ObjectUnsubscribedError_1 = __webpack_require__(374);
-var SubjectSubscription_1 = __webpack_require__(359);
-var rxSubscriber_1 = __webpack_require__(99);
+var ObjectUnsubscribedError_1 = __webpack_require__(375);
+var SubjectSubscription_1 = __webpack_require__(360);
+var rxSubscriber_1 = __webpack_require__(100);
 /**
  * @class SubjectSubscriber<T>
  */
@@ -26217,7 +26299,7 @@ exports.AnonymousSubject = AnonymousSubject;
 //# sourceMappingURL=Subject.js.map
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26233,7 +26315,7 @@ exports.$$rxSubscriber = exports.rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(19);
@@ -26243,7 +26325,7 @@ module.exports = function(it, msg){
 };
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26275,7 +26357,7 @@ module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0,
 };
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(37);
@@ -26288,7 +26370,7 @@ module.exports = function(iter, ITERATOR){
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(12)
@@ -26321,7 +26403,7 @@ module.exports = function(that, callbackfn, aLen, memo, isRight){
 };
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26351,7 +26433,7 @@ module.exports = Function.bind || function bind(that /*, args... */){
 };
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26499,12 +26581,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var classof = __webpack_require__(36)
-  , from    = __webpack_require__(102);
+  , from    = __webpack_require__(103);
 module.exports = function(NAME){
   return function toJSON(){
     if(classof(this) != NAME)throw TypeError(NAME + "#toJSON isn't generic");
@@ -26513,7 +26595,7 @@ module.exports = function(NAME){
 };
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26602,7 +26684,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(7) && !__webpack_require__(3)(function(){
@@ -26610,7 +26692,7 @@ module.exports = !__webpack_require__(7) && !__webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -26621,7 +26703,7 @@ module.exports = function isInteger(it){
 };
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -26638,7 +26720,7 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(33)
@@ -26653,7 +26735,7 @@ module.exports = function(object, el){
 };
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -26662,7 +26744,7 @@ module.exports = Math.log1p || function log1p(x){
 };
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP        = __webpack_require__(6)
@@ -26679,7 +26761,7 @@ module.exports = function define(target, mixin){
 };
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(6)
@@ -26697,7 +26779,7 @@ module.exports = __webpack_require__(7) ? Object.defineProperties : function def
 };
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -26722,7 +26804,7 @@ module.exports.f = function getOwnPropertyNames(it){
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(10)
@@ -26744,7 +26826,7 @@ module.exports = function(object, names){
 };
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(33)
@@ -26765,7 +26847,7 @@ module.exports = function(isEntries){
 };
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(2).parseFloat
@@ -26778,7 +26860,7 @@ module.exports = 1 / $parseFloat(__webpack_require__(93) + '-0') !== -Infinity ?
 } : $parseFloat;
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(2).parseInt
@@ -26792,13 +26874,13 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -26807,7 +26889,7 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
@@ -26829,13 +26911,13 @@ module.exports = function(that, maxLength, fillString, left){
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(5);
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var classof   = __webpack_require__(36)
@@ -26849,12 +26931,12 @@ module.exports = __webpack_require__(13).isIterable = function(it){
 };
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(105);
+var strong = __webpack_require__(106);
 
 // 23.1 Map Objects
 module.exports = __webpack_require__(54)('Map', function(get){
@@ -26872,7 +26954,7 @@ module.exports = __webpack_require__(54)('Map', function(get){
 }, strong, true);
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
@@ -26882,12 +26964,12 @@ if(__webpack_require__(7) && /./g.flags != 'g')__webpack_require__(6).f(RegExp.p
 });
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(105);
+var strong = __webpack_require__(106);
 
 // 23.2 Set Objects
 module.exports = __webpack_require__(54)('Set', function(get){
@@ -26900,7 +26982,7 @@ module.exports = __webpack_require__(54)('Set', function(get){
 }, strong);
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26909,7 +26991,7 @@ var each         = __webpack_require__(23)(0)
   , redefine     = __webpack_require__(17)
   , meta         = __webpack_require__(32)
   , assign       = __webpack_require__(83)
-  , weak         = __webpack_require__(107)
+  , weak         = __webpack_require__(108)
   , isObject     = __webpack_require__(4)
   , getWeak      = meta.getWeak
   , isExtensible = Object.isExtensible
@@ -26960,88 +27042,6 @@ if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
     });
   });
 }
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(Buffer) {/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap) {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-  var base64 = new Buffer(JSON.stringify(sourceMap)).toString('base64');
-  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-  return '/*# ' + data + ' */';
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(158).Buffer))
 
 /***/ }),
 /* 130 */
@@ -27310,12 +27310,12 @@ exports.isScheduler = isScheduler;
 "use strict";
 
 var root_1 = __webpack_require__(49);
-var isArrayLike_1 = __webpack_require__(376);
-var isPromise_1 = __webpack_require__(377);
+var isArrayLike_1 = __webpack_require__(377);
+var isPromise_1 = __webpack_require__(378);
 var isObject_1 = __webpack_require__(143);
 var Observable_1 = __webpack_require__(27);
-var iterator_1 = __webpack_require__(373);
-var InnerSubscriber_1 = __webpack_require__(358);
+var iterator_1 = __webpack_require__(374);
+var InnerSubscriber_1 = __webpack_require__(359);
 var observable_1 = __webpack_require__(139);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
@@ -27626,7 +27626,7 @@ __webpack_require__(346);
 __webpack_require__(165);
 __webpack_require__(52);
 __webpack_require__(167);
-__webpack_require__(124);
+__webpack_require__(125);
 __webpack_require__(164);
 __webpack_require__(166);
 __webpack_require__(171);
@@ -29892,7 +29892,7 @@ if (_global['PromiseRejectionEvent']) {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(67), __webpack_require__(357)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(67), __webpack_require__(358)))
 
 /***/ }),
 /* 151 */
@@ -56517,11 +56517,11 @@ var ImportResolver = (function () {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(369);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(69);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AbstractControlDirective", function() { return AbstractControlDirective; });
@@ -62606,20 +62606,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(22);
-__webpack_require__(349);
-__webpack_require__(380);
+__webpack_require__(350);
+__webpack_require__(382);
 var DemoComponent = (function () {
     function DemoComponent() {
+        this.sections = new Map();
+        this.sections.set('default', 'template');
+        this.sections.set('full', 'template');
+        this.sections.set('numeric', 'template');
     }
+    DemoComponent.prototype.activate = function (section, tab) {
+        this.sections.set(section, tab);
+    };
+    DemoComponent.prototype.isActive = function (section, tab) {
+        return this.sections.get(section) === tab;
+    };
+    DemoComponent.prototype.showValue = function ($event) {
+        console.log($event);
+    };
     return DemoComponent;
 }());
 DemoComponent = __decorate([
     core_1.Component({
         selector: 'demo-app',
-        template: __webpack_require__(354)
-    })
+        template: __webpack_require__(355),
+        styles: [__webpack_require__(381)]
+    }),
+    __metadata("design:paramtypes", [])
 ], DemoComponent);
 exports.DemoComponent = DemoComponent;
 
@@ -62750,6 +62768,9 @@ var NgxClickToEditComponent = (function () {
         if (event.key === 'Enter') {
             this.callSave();
         }
+        if (event.key === 'Escape') {
+            this.cancelEditable();
+        }
     };
     NgxClickToEditComponent.prototype.callSave = function () {
         this.onSave.emit({ field: this.field, value: this.value });
@@ -62797,8 +62818,8 @@ __decorate([
 NgxClickToEditComponent = __decorate([
     core_1.Component({
         selector: 'ngx-click-to-edit',
-        template: __webpack_require__(355),
-        styles: [__webpack_require__(381)]
+        template: __webpack_require__(356),
+        styles: [__webpack_require__(383)]
     })
 ], NgxClickToEditComponent);
 exports.NgxClickToEditComponent = NgxClickToEditComponent;
@@ -62941,7 +62962,7 @@ function fromByteArray (uint8) {
 
 
 var base64 = __webpack_require__(157)
-var ieee754 = __webpack_require__(356)
+var ieee754 = __webpack_require__(357)
 var isArray = __webpack_require__(159)
 
 exports.Buffer = Buffer
@@ -64831,10 +64852,10 @@ var ctx            = __webpack_require__(24)
   , getPrototypeOf = __webpack_require__(16)
   , getKeys        = __webpack_require__(33)
   , dP             = __webpack_require__(6)
-  , keyOf          = __webpack_require__(111)
+  , keyOf          = __webpack_require__(112)
   , aFunction      = __webpack_require__(12)
   , forOf          = __webpack_require__(37)
-  , isIterable     = __webpack_require__(124)
+  , isIterable     = __webpack_require__(125)
   , $iterCreate    = __webpack_require__(59)
   , step           = __webpack_require__(79)
   , isObject       = __webpack_require__(4)
@@ -64982,7 +65003,7 @@ $export($export.S, 'Dict', {
 /* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var path    = __webpack_require__(120)
+var path    = __webpack_require__(121)
   , $export = __webpack_require__(0);
 
 // Placeholder
@@ -65030,7 +65051,7 @@ $export($export.S + $export.F, 'Object', {classof: __webpack_require__(36)});
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0)
-  , define  = __webpack_require__(113);
+  , define  = __webpack_require__(114);
 
 $export($export.S + $export.F, 'Object', {define: define});
 
@@ -65047,7 +65068,7 @@ $export($export.S + $export.F, 'Object', {isObject: __webpack_require__(4)});
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0)
-  , define  = __webpack_require__(113)
+  , define  = __webpack_require__(114)
   , create  = __webpack_require__(29);
 
 $export($export.S + $export.F, 'Object', {
@@ -65108,7 +65129,7 @@ $export($export.P + $export.F, 'String', {unescapeHTML:  function unescapeHTML()
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', {copyWithin: __webpack_require__(101)});
+$export($export.P, 'Array', {copyWithin: __webpack_require__(102)});
 
 __webpack_require__(45)('copyWithin');
 
@@ -65221,7 +65242,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 var ctx            = __webpack_require__(24)
   , $export        = __webpack_require__(0)
   , toObject       = __webpack_require__(9)
-  , call           = __webpack_require__(110)
+  , call           = __webpack_require__(111)
   , isArrayIter    = __webpack_require__(77)
   , toLength       = __webpack_require__(8)
   , createProperty = __webpack_require__(71)
@@ -65380,7 +65401,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function(){
 "use strict";
 
 var $export = __webpack_require__(0)
-  , $reduce = __webpack_require__(103);
+  , $reduce = __webpack_require__(104);
 
 $export($export.P + $export.F * !__webpack_require__(21)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -65396,7 +65417,7 @@ $export($export.P + $export.F * !__webpack_require__(21)([].reduceRight, true), 
 "use strict";
 
 var $export = __webpack_require__(0)
-  , $reduce = __webpack_require__(103);
+  , $reduce = __webpack_require__(104);
 
 $export($export.P + $export.F * !__webpack_require__(21)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -65585,7 +65606,7 @@ if(new Date(NaN) + '' != INVALID_DATE){
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Function', {bind: __webpack_require__(104)});
+$export($export.P, 'Function', {bind: __webpack_require__(105)});
 
 /***/ }),
 /* 202 */
@@ -65642,7 +65663,7 @@ NAME in FProto || __webpack_require__(7) && dP(FProto, NAME, {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(0)
-  , log1p   = __webpack_require__(112)
+  , log1p   = __webpack_require__(113)
   , sqrt    = Math.sqrt
   , $acosh  = Math.acosh;
 
@@ -65843,7 +65864,7 @@ $export($export.S, 'Math', {
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', {log1p: __webpack_require__(112)});
+$export($export.S, 'Math', {log1p: __webpack_require__(113)});
 
 /***/ }),
 /* 216 */
@@ -66022,7 +66043,7 @@ $export($export.S, 'Number', {
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Number', {isInteger: __webpack_require__(109)});
+$export($export.S, 'Number', {isInteger: __webpack_require__(110)});
 
 /***/ }),
 /* 225 */
@@ -66043,7 +66064,7 @@ $export($export.S, 'Number', {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export   = __webpack_require__(0)
-  , isInteger = __webpack_require__(109)
+  , isInteger = __webpack_require__(110)
   , abs       = Math.abs;
 
 $export($export.S, 'Number', {
@@ -66075,7 +66096,7 @@ $export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(0)
-  , $parseFloat = __webpack_require__(118);
+  , $parseFloat = __webpack_require__(119);
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {parseFloat: $parseFloat});
 
@@ -66084,7 +66105,7 @@ $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {p
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(0)
-  , $parseInt = __webpack_require__(119);
+  , $parseInt = __webpack_require__(120);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
@@ -66096,7 +66117,7 @@ $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parse
 
 var $export      = __webpack_require__(0)
   , toInteger    = __webpack_require__(34)
-  , aNumberValue = __webpack_require__(100)
+  , aNumberValue = __webpack_require__(101)
   , repeat       = __webpack_require__(92)
   , $toFixed     = 1..toFixed
   , floor        = Math.floor
@@ -66215,7 +66236,7 @@ $export($export.P + $export.F * (!!$toFixed && (
 
 var $export      = __webpack_require__(0)
   , $fails       = __webpack_require__(3)
-  , aNumberValue = __webpack_require__(100)
+  , aNumberValue = __webpack_require__(101)
   , $toPrecision = 1..toPrecision;
 
 $export($export.P + $export.F * ($fails(function(){
@@ -66254,7 +66275,7 @@ $export($export.S, 'Object', {create: __webpack_require__(29)});
 
 var $export = __webpack_require__(0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(7), 'Object', {defineProperties: __webpack_require__(114)});
+$export($export.S + $export.F * !__webpack_require__(7), 'Object', {defineProperties: __webpack_require__(115)});
 
 /***/ }),
 /* 236 */
@@ -66298,7 +66319,7 @@ __webpack_require__(25)('getOwnPropertyDescriptor', function(){
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(25)('getOwnPropertyNames', function(){
-  return __webpack_require__(115).f;
+  return __webpack_require__(116).f;
 });
 
 /***/ }),
@@ -66360,7 +66381,7 @@ __webpack_require__(25)('isSealed', function($isSealed){
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', {is: __webpack_require__(121)});
+$export($export.S, 'Object', {is: __webpack_require__(122)});
 
 /***/ }),
 /* 245 */
@@ -66433,7 +66454,7 @@ if(test + '' != '[object z]'){
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(0)
-  , $parseFloat = __webpack_require__(118);
+  , $parseFloat = __webpack_require__(119);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parseFloat});
 
@@ -66442,7 +66463,7 @@ $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parse
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(0)
-  , $parseInt = __webpack_require__(119);
+  , $parseInt = __webpack_require__(120);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 
@@ -66783,7 +66804,7 @@ var $export    = __webpack_require__(0)
   , anObject   = __webpack_require__(1)
   , isObject   = __webpack_require__(4)
   , fails      = __webpack_require__(3)
-  , bind       = __webpack_require__(104)
+  , bind       = __webpack_require__(105)
   , rConstruct = (__webpack_require__(2).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -67246,7 +67267,7 @@ __webpack_require__(55)('split', 2, function(defined, SPLIT, $split){
 
 "use strict";
 
-__webpack_require__(126);
+__webpack_require__(127);
 var anObject    = __webpack_require__(1)
   , $flags      = __webpack_require__(56)
   , DESCRIPTORS = __webpack_require__(7)
@@ -67639,9 +67660,9 @@ var global         = __webpack_require__(2)
   , setToStringTag = __webpack_require__(46)
   , uid            = __webpack_require__(44)
   , wks            = __webpack_require__(5)
-  , wksExt         = __webpack_require__(123)
+  , wksExt         = __webpack_require__(124)
   , wksDefine      = __webpack_require__(96)
-  , keyOf          = __webpack_require__(111)
+  , keyOf          = __webpack_require__(112)
   , enumKeys       = __webpack_require__(163)
   , isArray        = __webpack_require__(78)
   , anObject       = __webpack_require__(1)
@@ -67649,7 +67670,7 @@ var global         = __webpack_require__(2)
   , toPrimitive    = __webpack_require__(26)
   , createDesc     = __webpack_require__(30)
   , _create        = __webpack_require__(29)
-  , gOPNExt        = __webpack_require__(115)
+  , gOPNExt        = __webpack_require__(116)
   , $GOPD          = __webpack_require__(15)
   , $DP            = __webpack_require__(6)
   , $keys          = __webpack_require__(33)
@@ -68019,7 +68040,7 @@ __webpack_require__(31)('Uint8', 1, function(init){
 
 "use strict";
 
-var weak = __webpack_require__(107);
+var weak = __webpack_require__(108);
 
 // 23.4 WeakSet Objects
 __webpack_require__(54)('WeakSet', function(get){
@@ -68087,7 +68108,7 @@ $export($export.S, 'Error', {
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export  = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Map', {toJSON: __webpack_require__(106)('Map')});
+$export($export.P + $export.R, 'Map', {toJSON: __webpack_require__(107)('Map')});
 
 /***/ }),
 /* 312 */
@@ -68205,7 +68226,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(62), 'Object',
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export  = __webpack_require__(0)
-  , $entries = __webpack_require__(117)(true);
+  , $entries = __webpack_require__(118)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it){
@@ -68291,7 +68312,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(62), 'Object',
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0)
-  , $values = __webpack_require__(117)(false);
+  , $values = __webpack_require__(118)(false);
 
 $export($export.S, 'Object', {
   values: function values(it){
@@ -68541,8 +68562,8 @@ metadata.exp({deleteMetadata: function deleteMetadata(metadataKey, target /*, ta
 /* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set                     = __webpack_require__(127)
-  , from                    = __webpack_require__(102)
+var Set                     = __webpack_require__(128)
+  , from                    = __webpack_require__(103)
   , metadata                = __webpack_require__(28)
   , anObject                = __webpack_require__(1)
   , getPrototypeOf          = __webpack_require__(16)
@@ -68672,7 +68693,7 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export  = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Set', {toJSON: __webpack_require__(106)('Set')});
+$export($export.P + $export.R, 'Set', {toJSON: __webpack_require__(107)('Set')});
 
 /***/ }),
 /* 334 */
@@ -68734,7 +68755,7 @@ $export($export.P, 'String', {
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0)
-  , $pad    = __webpack_require__(122);
+  , $pad    = __webpack_require__(123);
 
 $export($export.P, 'String', {
   padEnd: function padEnd(maxLength /*, fillString = ' ' */){
@@ -68750,7 +68771,7 @@ $export($export.P, 'String', {
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0)
-  , $pad    = __webpack_require__(122);
+  , $pad    = __webpack_require__(123);
 
 $export($export.P, 'String', {
   padStart: function padStart(maxLength /*, fillString = ' ' */){
@@ -68974,15 +68995,15 @@ __webpack_require__(195);
 __webpack_require__(97);
 __webpack_require__(267);
 __webpack_require__(272);
-__webpack_require__(126);
+__webpack_require__(127);
 __webpack_require__(268);
 __webpack_require__(269);
 __webpack_require__(270);
 __webpack_require__(271);
 __webpack_require__(252);
-__webpack_require__(125);
-__webpack_require__(127);
+__webpack_require__(126);
 __webpack_require__(128);
+__webpack_require__(129);
 __webpack_require__(307);
 __webpack_require__(296);
 __webpack_require__(297);
@@ -69053,7 +69074,21 @@ module.exports = __webpack_require__(13);
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(129)(undefined);
+exports = module.exports = __webpack_require__(98)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".cte-example {\n    padding: 1.5rem;\n    margin-right: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n    border-width: .2rem;\n}\n\n.tag {\n    color: #D43669;\n}\n\n.atn {\n    color: #31708f;\n}\n\n.pun {\n    color: #7a8b94;\n}\n\n.atv {\n    color: #647f11;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 348 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(98)(undefined);
 // imports
 
 
@@ -69064,10 +69099,10 @@ exports.push([module.i, "/*!\n *  Font Awesome 4.7.0 by @davegandy - http://font
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(129)(undefined);
+exports = module.exports = __webpack_require__(98)(undefined);
 // imports
 
 
@@ -69078,17 +69113,17 @@ exports.push([module.i, ".click-to-edit {\n}\n\n.selectable {\n    cursor: point
 
 
 /***/ }),
-/* 349 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(353);
-
-
-/***/ }),
 /* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(351)();
+__webpack_require__(354);
+
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(352)();
 // imports
 
 
@@ -69099,7 +69134,7 @@ exports.push([module.i, ".fa-border {\n  padding: .2em .25em .15em;\n  border: s
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports) {
 
 /*
@@ -69155,7 +69190,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports) {
 
 /*
@@ -69407,16 +69442,16 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(350);
+var content = __webpack_require__(351);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(352)(content, {});
+var update = __webpack_require__(353)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -69433,19 +69468,19 @@ if(false) {
 }
 
 /***/ }),
-/* 354 */
-/***/ (function(module, exports) {
-
-module.exports = "Default (string):\n<ngx-click-to-edit [value]=\"'Some text'\"></ngx-click-to-edit>\nFull select:\n<ngx-click-to-edit [value]=\"'Bla'\" [full]=\"true\"></ngx-click-to-edit>\nNumber:\n<ngx-click-to-edit [type]=\"number\" [value]=\"9\" [min]=\"0\" [max]=\"10\"></ngx-click-to-edit>\nNumber with unit:\n<ngx-click-to-edit [type]=\"number\" [value]=\"9\" [min]=\"0\" [max]=\"10\" [unit]=\"'m/s'\"></ngx-click-to-edit>\nWith ng-content:\n<ngx-click-to-edit [value]=\"'Bla'\">edit</ngx-click-to-edit>\nFull select with ng-content:\n<ngx-click-to-edit [value]=\"'Bla'\" [full]=\"true\">edit</ngx-click-to-edit>\nNo trigger icon:\n<ngx-click-to-edit [value]=\"'Bla'\" [hideTrigger]=\"true\"></ngx-click-to-edit>\n\n<div class=\"row\">\n    <div class=\"col-md-10 col-xs-12 col-md-offset-1 push-md-1\">\n        <div class=\"content-header\">\n            <h1>Click to Edit</h1>\n        </div>\n\n        <div class=\"content-box\" id=\"content\">\n\n            <div class=\"section\" id=\"example\">\n                <div class=\"item\">\n\n                    <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re\n                        made interactive with the included dropdown directives.</p>\n\n                    <h2>Contents</h2>\n                    <ul>\n                        <li><a fragment=\"examples\" routerlink=\".\" href=\"#usage\">Usage</a></li>\n                        <li><a fragment=\"examples\" routerlink=\".\" href=\"#examples\">Examples</a>\n                            <ul>\n                                <li><a fragment=\"single-button\" routerlink=\".\" href=\"#/dropdowns#single-button\">Single\n                                    button dropdowns</a></li>\n                            </ul>\n                        </li>\n                    </ul>\n\n                    <h2 fragment=\"usage\" id=\"usage\" routerlink=\".\">Usage</h2>\n\n                    <pre>\n                    import &#123; BsDropdownModule &#125; from 'ngx-bootstrap';&#xD;\n\n                    @NgModule(&#123;\n                    imports: [BsDropdownModule.forRoot(),...]\n                    &#125;)\n                    export class AppModule()&#123;&#125;</pre>\n\n                    <h2 fragment=\"examples\" id=\"examples\" routerlink=\".\">Examples</h2>\n                    <p>Wrap the dropdown’s toggle (your button or link) and the dropdown menu within\n                        <code>dropdown</code>.\n                        Dropdowns can be triggered from <code> &lt;a&gt;</code> or <code> &lt;button&gt;</code> elements\n                        to better fit your potential needs.</p>\n\n                    <h2 fragment=\"single-button\" id=\"single-button\" routerlink=\".\">Single button dropdowns</h2>\n\n                    <p>Any single <code>.btn</code> can be turned into a dropdown toggle with some markup changes.\n                        Here’s how you can put them to work with either <code> &lt;button&gt; </code> elements:</p>\n                    <div class=\"section\">\n                        <ngx-click-to-edit [value]=\"'Some text'\"></ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\" id=\"markup\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item active\">\n                                    <a class=\"nav-link active\" href=\"javascript:void(0);\">\n                                        <span>template</span>\n                                    </a>\n                                </li><li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"javascript:void(0);\">\n                                        <span>component</span>\n                                    </a>\n                                </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"template\" class=\"active tab-pane\"></div>\n                                    <div heading=\"component\" class=\"tab-pane\"></div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
-
-/***/ }),
 /* 355 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"click-to-edit\">\n    <div class='ndv-comp' [ngClass]=\"{'ndv-active':show}\">\n        <input *ngIf='show && type === \"string\"' type='text' [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n        <input *ngIf='show && type === \"number\"' type='number' min=\"min\" max=\"max\" [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n\n        <div *ngIf='!show'>\n            <div *ngIf=\"hideTrigger === false\">\n                <div #ref class=\"click-to-edit-content selectable\" (click)='makeEditable(\"trigger\")'><ng-content></ng-content></div>\n                <i class=\"fa fa-pencil selectable\" (click)='makeEditable(\"trigger\")' *ngIf=\"ref.childNodes.length == 0\"></i>\n            </div>\n            <div class=\"click-to-edit-value\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"value\")' [innerHTML]=\"value || 'empty'\"></div>\n            <div class=\"click-to-edit-unit\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"unit\")' *ngIf=\"unit !== ''\" [innerHTML]=\"unit\"></div>\n        </div>\n    </div>\n    <div class='ndv-buttons' *ngIf='show'>\n        <button class='btn-x-sm' (click)='callSave()'><i class=\"fa fa-check\"></i></button>\n        <button class='btn-x-sm' (click)='cancelEditable()'><i class=\"fa fa-times\"></i></button>\n    </div>\n</div>";
+module.exports = "<div class=\"row\">\n    <div class=\"col-md-10 col-xs-12 col-md-offset-1 push-md-1\">\n        <div class=\"content-header\">\n            <h1>Click to Edit</h1>\n        </div>\n\n        <div class=\"content-box\" id=\"content\">\n\n            <div class=\"section\" id=\"example\">\n                <div class=\"item\">\n\n                    <p>Click to edit is an editable text component.</p>\n\n                    <h2>Contents</h2>\n                    <ul>\n                        <li><a fragment=\"examples\" routerlink=\".\" href=\"#usage\">Usage</a></li>\n                        <li><a fragment=\"examples\" routerlink=\".\" href=\"#examples\">Examples</a>\n                            <ul>\n                                <li><a fragment=\"default\" routerlink=\".\" href=\"#default\">Default</a></li>\n                                <li><a fragment=\"full\" routerlink=\".\" href=\"#full\">Fully select</a></li>\n                                <li><a fragment=\"number\" routerlink=\".\" href=\"#number\">Numeric</a></li>\n                                <li><a fragment=\"number_unit\" routerlink=\".\" href=\"#number_unit\">Numeric with unit</a></li>\n                                <li><a fragment=\"ng_content\" routerlink=\".\" href=\"#ng_content\">With ng-content</a></li>\n                                <li><a fragment=\"fully_with_ng_content\" routerlink=\".\" href=\"#fully_with_ng_content\">Fully selectable with ng-content</a></li>\n                                <li><a fragment=\"no_icon\" routerlink=\".\" href=\"#no_icon\">No trigger icon</a></li>\n                            </ul>\n                        </li>\n                    </ul>\n\n                    <h2 fragment=\"usage\" id=\"usage\" routerlink=\".\">Usage</h2>\n\n                    <pre>\n            import &#123; NgxClickToEditModule &#125; from 'ngx-click-to-edit';&#xD;\n\n            @NgModule(&#123;\n                imports: [NgxClickToEditModule.forRoot(),...]\n            &#125;)\n            export class AppModule()&#123;&#125;</pre>\n\n                    <h2 fragment=\"examples\" id=\"examples\" routerlink=\".\">Examples</h2>\n                    <p>Wrap the dropdown’s toggle (your button or link) and the dropdown menu within\n                        <code>dropdown</code>.\n                        Dropdowns can be triggered from <code> &lt;a&gt;</code> or <code> &lt;button&gt;</code> elements\n                        to better fit your potential needs.</p>\n\n                    <h2 fragment=\"default\" id=\"default\" routerlink=\".\">Default use</h2>\n\n                    <p>Default usage.</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [value]=\"'Limpsum'\" (onSave)=\"showValue($event)\"></ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"Limpsum\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span><span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-default'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <h2 fragment=\"full\" id=\"full\" routerlink=\".\">Fully selectable</h2>\n\n                    <p>Fully selectable usage.</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [value]=\"'Limpsum'\" [full]=\"true\" (onSave)=\"showValue($event)\"></ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"Limpsum\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">full</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"true\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span><span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-full'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <h2 fragment=\"number\" id=\"number\" routerlink=\".\">Numeric</h2>\n\n                    <p>Numeric usage.</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [type]=\"number\" [value]=\"9\" [min]=\"-3\" [max]=\"10\" (onSave)=\"showValue($event)\"></ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">type</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"number\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"9\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">min</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"-3\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">max</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"10\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span><span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-numeric'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <h2 fragment=\"number_unit\" id=\"number_unit\" routerlink=\".\">Numeric with unit</h2>\n\n                    <p>Numeric with unit</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [type]=\"number\" [value]=\"9\" [unit]=\"'m/s'\" [min]=\"-3\" [max]=\"10\" (onSave)=\"showValue($event)\"></ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">type</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"number\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"9\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">unit</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"'m/s'\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">min</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"-3\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">max</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"10\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span><span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-numeric_with_unit'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <h2 fragment=\"ng_content\" id=\"ng_content\" routerlink=\".\">With ng-content</h2>\n\n                    <p>With ng-content</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [value]=\"'Limpsum'\" (onSave)=\"showValue($event)\">edit</ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"Limpsum\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span>edit<span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-ng_content'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <h2 fragment=\"fully_with_ng_content\" id=\"fully_with_ng_content\" routerlink=\".\">Fully selectable with ng-content</h2>\n\n                    <p>Fully selectable with ng-content</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [value]=\"'Limpsum'\" [full]=\"true\" (onSave)=\"showValue($event)\">edit</ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"Limpsum\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">full</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"true\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span>edit<span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-full_with_ng_content'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <h2 fragment=\"no_icon\" id=\"no_icon\" routerlink=\".\">No trigger icon</h2>\n\n                    <p>No trigger icon</p>\n\n                    <div class=\"section cte-example\">\n                        <ngx-click-to-edit [value]=\"'Limpsum'\" [hideTrigger]=\"true\" (onSave)=\"showValue($event)\"></ngx-click-to-edit>\n                    </div>\n                    <div class=\"section\">\n                        <div class=\"item\">\n                            <div class=\"tab-container\">\n                                <ul class=\"nav nav-tabs\">\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','template')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','template')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>template</span>\n                                        </a>\n                                    </li>\n                                    <li class=\"nav-item\" [class.active]=\"isActive('default','component')\">\n                                        <a class=\"nav-link\" (click)=\"activate('default','component')\"\n                                           href=\"javascript:void(0);\">\n                                            <span>component</span>\n                                        </a>\n                                    </li>\n                                </ul>\n                                <div class=\"tab-content\">\n                                    <div heading=\"component\" [class.active]=\"isActive('default','template')\"\n                                         class=\"tab-pane\">\n                                        <pre>\n\n\n        <ol class=\"linenums\"><li class=\"L0\"><span class=\"tag\">&lt;ngx-click-to-edit</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">value</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"Limpsum\"</span><span\n                class=\"pln\"> [</span><span\n                class=\"atn\">noTrigger</span><span class=\"pln\">]</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"true\"</span><span class=\"pln\"> (</span><span\n                class=\"atn\">onSave</span><span class=\"pln\">)</span><span class=\"pun\">=</span><span\n                class=\"atv\">\"showValue($event)\"</span><span class=\"tag\">&gt;</span>edit<span class=\"tag\">&lt;/ngx-click-to-edit&gt;</span></li>\n        </ol></pre>\n                                    </div>\n                                    <div heading=\"component\" [class.active]=\"isActive('default','component')\"\n                                         class=\"tab-pane\">\n                                        <pre class=\"prettyprint linenums lang-js prettyprinted\" style=\"\"><ol\n                                                class=\"linenums\"><li><span class=\"kwd\">import</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span><span\n                                                class=\"pln\"> </span><span class=\"typ\">Component</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#125;</span><span class=\"pln\"> from </span><span\n                                                class=\"str\">'@angular/core'</span><span class=\"pun\">;</span></li><li><span\n                                                class=\"pln\">&nbsp;</span></li><li class=\"L2\"><span\n                                                class=\"lit\">@Component</span><span class=\"pun\">(&#123;</span></li><li><span\n                                                class=\"pln\">  selector</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"str\">'demo-click-to-edit-no_trigger_icon'</span><span\n                                                class=\"pun\">,</span></li><li><span\n                                                class=\"pln\">  templateUrl</span><span class=\"pun\">:</span><span\n                                                class=\"pln\"> </span><span class=\"str\">'./default.html'</span></li><li><span\n                                                class=\"pun\">&#125;)</span></li><li class=\"L6\"><span\n                                                class=\"kwd\">export</span><span class=\"pln\"> </span><span class=\"kwd\">class</span><span\n                                                class=\"pln\"> </span><span\n                                                class=\"typ\">DemoClickToEditDefaultComponent</span><span\n                                                class=\"pln\"> </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">  private showValue($event: any): void </span><span class=\"pun\">&#123;</span></li><li><span\n                                                class=\"pln\">    console.log($event);</span></li><li><span class=\"pln\">  </span><span class=\"pun\">&#125;</span></li><li><span\n                                                class=\"pun\">&#125;</span></li></ol></pre>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
 
 /***/ }),
 /* 356 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"click-to-edit\">\n    <div class='ndv-comp' [ngClass]=\"{'ndv-active':show}\">\n        <input tabindex=\"-1\" *ngIf='show && type === \"string\"' type='text' [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n        <input tabindex=\"-1\" *ngIf='show && type === \"number\"' type='number' [min]=\"min\" [max]=\"max\" [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n\n        <div *ngIf='!show'>\n            <div *ngIf=\"hideTrigger === false\">\n                <div #ref class=\"click-to-edit-content selectable\" (click)='makeEditable(\"trigger\")'><ng-content></ng-content></div>\n                <i class=\"fa fa-pencil selectable\" (click)='makeEditable(\"trigger\")' *ngIf=\"ref.childNodes.length == 0\"></i>\n            </div>\n            <div class=\"click-to-edit-value\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"value\")' [innerHTML]=\"value || 'empty'\"></div>\n            <div class=\"click-to-edit-unit\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"unit\")' *ngIf=\"unit !== ''\" [innerHTML]=\"unit\"></div>\n        </div>\n    </div>\n    <div class='ndv-buttons' *ngIf='show'>\n        <button class='btn-x-sm' (click)='callSave()'><i class=\"fa fa-check\"></i></button>\n        <button class='btn-x-sm' (click)='cancelEditable()'><i class=\"fa fa-times\"></i></button>\n    </div>\n</div>";
+
+/***/ }),
+/* 357 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -69535,7 +69570,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -69725,7 +69760,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69767,7 +69802,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69813,7 +69848,7 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69824,7 +69859,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(27);
-var ScalarObservable_1 = __webpack_require__(364);
+var ScalarObservable_1 = __webpack_require__(365);
 var EmptyObservable_1 = __webpack_require__(138);
 var isScheduler_1 = __webpack_require__(144);
 /**
@@ -69941,7 +69976,7 @@ exports.ArrayObservable = ArrayObservable;
 //# sourceMappingURL=ArrayObservable.js.map
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69951,7 +69986,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(98);
+var Subject_1 = __webpack_require__(99);
 var Observable_1 = __webpack_require__(27);
 var Subscriber_1 = __webpack_require__(48);
 var Subscription_1 = __webpack_require__(66);
@@ -70111,7 +70146,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70229,7 +70264,7 @@ var ForkJoinSubscriber = (function (_super) {
 //# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70356,7 +70391,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70420,24 +70455,14 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 365 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var ForkJoinObservable_1 = __webpack_require__(362);
-exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
-//# sourceMappingURL=forkJoin.js.map
-
-/***/ }),
 /* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var PromiseObservable_1 = __webpack_require__(363);
-exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
-//# sourceMappingURL=fromPromise.js.map
+var ForkJoinObservable_1 = __webpack_require__(363);
+exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
+//# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
 /* 367 */
@@ -70445,12 +70470,22 @@ exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 
 "use strict";
 
-var merge_1 = __webpack_require__(369);
+var PromiseObservable_1 = __webpack_require__(364);
+exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
+//# sourceMappingURL=fromPromise.js.map
+
+/***/ }),
+/* 368 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var merge_1 = __webpack_require__(370);
 exports.merge = merge_1.mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70543,14 +70578,14 @@ var MapSubscriber = (function (_super) {
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(27);
-var ArrayObservable_1 = __webpack_require__(360);
-var mergeAll_1 = __webpack_require__(370);
+var ArrayObservable_1 = __webpack_require__(361);
+var mergeAll_1 = __webpack_require__(371);
 var isScheduler_1 = __webpack_require__(144);
 /* tslint:enable:max-line-length */
 /**
@@ -70694,7 +70729,7 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70811,12 +70846,12 @@ exports.MergeAllSubscriber = MergeAllSubscriber;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(361);
+var ConnectableObservable_1 = __webpack_require__(362);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -70874,13 +70909,13 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(371);
-var Subject_1 = __webpack_require__(98);
+var multicast_1 = __webpack_require__(372);
+var Subject_1 = __webpack_require__(99);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
 }
@@ -70904,7 +70939,7 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70948,7 +70983,7 @@ exports.$$iterator = exports.iterator;
 //# sourceMappingURL=iterator.js.map
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -70981,7 +71016,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71012,7 +71047,7 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71021,7 +71056,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71033,13 +71068,13 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Subscriber_1 = __webpack_require__(48);
-var rxSubscriber_1 = __webpack_require__(99);
+var rxSubscriber_1 = __webpack_require__(100);
 var Observer_1 = __webpack_require__(136);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
@@ -71059,7 +71094,7 @@ exports.toSubscriber = toSubscriber;
 //# sourceMappingURL=toSubscriber.js.map
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71084,7 +71119,7 @@ exports.tryCatch = tryCatch;
 //# sourceMappingURL=tryCatch.js.map
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -71098,11 +71133,25 @@ exports.tryCatch = tryCatch;
     
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
         var result = __webpack_require__(348);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 383 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(349);
 
         if (typeof result === "string") {
             module.exports = result;

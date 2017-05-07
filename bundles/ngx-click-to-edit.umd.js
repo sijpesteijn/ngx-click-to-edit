@@ -1,6 +1,6 @@
 /**
  * ngx-click-to-edit - 
- * @version v0.0.0-beta1
+ * @version v0.0.1-beta01
  * @author gijs.sijpesteijn
  * @link https://github.com/sijpesteijn/ngx-click-to-edit#readme
  * @license MIT
@@ -145,6 +145,9 @@ var NgxClickToEditComponent = (function () {
     NgxClickToEditComponent.prototype.onKey = function (event) {
         if (event.key === 'Enter') {
             this.callSave();
+        }
+        if (event.key === 'Escape') {
+            this.cancelEditable();
         }
     };
     NgxClickToEditComponent.prototype.callSave = function () {
@@ -2242,7 +2245,7 @@ function toComment(sourceMap) {
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"click-to-edit\">\n    <div class='ndv-comp' [ngClass]=\"{'ndv-active':show}\">\n        <input *ngIf='show && type === \"string\"' type='text' [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n        <input *ngIf='show && type === \"number\"' type='number' min=\"min\" max=\"max\" [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n\n        <div *ngIf='!show'>\n            <div *ngIf=\"hideTrigger === false\">\n                <div #ref class=\"click-to-edit-content selectable\" (click)='makeEditable(\"trigger\")'><ng-content></ng-content></div>\n                <i class=\"fa fa-pencil selectable\" (click)='makeEditable(\"trigger\")' *ngIf=\"ref.childNodes.length == 0\"></i>\n            </div>\n            <div class=\"click-to-edit-value\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"value\")' [innerHTML]=\"value || 'empty'\"></div>\n            <div class=\"click-to-edit-unit\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"unit\")' *ngIf=\"unit !== ''\" [innerHTML]=\"unit\"></div>\n        </div>\n    </div>\n    <div class='ndv-buttons' *ngIf='show'>\n        <button class='btn-x-sm' (click)='callSave()'><i class=\"fa fa-check\"></i></button>\n        <button class='btn-x-sm' (click)='cancelEditable()'><i class=\"fa fa-times\"></i></button>\n    </div>\n</div>";
+module.exports = "<div class=\"click-to-edit\">\n    <div class='ndv-comp' [ngClass]=\"{'ndv-active':show}\">\n        <input tabindex=\"-1\" *ngIf='show && type === \"string\"' type='text' [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n        <input tabindex=\"-1\" *ngIf='show && type === \"number\"' type='number' [min]=\"min\" [max]=\"max\" [(ngModel)]='value' (keyup)=\"onKey($event)\"/>\n\n        <div *ngIf='!show'>\n            <div *ngIf=\"hideTrigger === false\">\n                <div #ref class=\"click-to-edit-content selectable\" (click)='makeEditable(\"trigger\")'><ng-content></ng-content></div>\n                <i class=\"fa fa-pencil selectable\" (click)='makeEditable(\"trigger\")' *ngIf=\"ref.childNodes.length == 0\"></i>\n            </div>\n            <div class=\"click-to-edit-value\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"value\")' [innerHTML]=\"value || 'empty'\"></div>\n            <div class=\"click-to-edit-unit\" [class.selectable]=\"full === true || hideTrigger === true\" (click)='makeEditable(\"unit\")' *ngIf=\"unit !== ''\" [innerHTML]=\"unit\"></div>\n        </div>\n    </div>\n    <div class='ndv-buttons' *ngIf='show'>\n        <button class='btn-x-sm' (click)='callSave()'><i class=\"fa fa-check\"></i></button>\n        <button class='btn-x-sm' (click)='cancelEditable()'><i class=\"fa fa-times\"></i></button>\n    </div>\n</div>";
 
 /***/ }),
 /* 8 */
