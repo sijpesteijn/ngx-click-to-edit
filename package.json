@@ -1,6 +1,6 @@
 {
   "name": "ngx-click-to-edit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./bundles/ngx-click-to-edit.umd.js",
   "module": "./index.js",
