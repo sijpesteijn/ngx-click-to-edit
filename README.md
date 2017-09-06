@@ -47,7 +47,7 @@ Finally use in one of your apps components:
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<ngx-click-to-edit></ngx-click-to-edit>'
+  template: '<click-to-edit></click-to-edit>'
 })
 export class MyComponent {}
 ```
@@ -65,24 +65,6 @@ You may also find it useful to view the [demo source](https://github.com/sijpest
 ## Documentation
 All documentation is auto-generated from the source via [compodoc](https://compodoc.github.io/compodoc/) and can be viewed here:
 https://sijpesteijn.github.io/ngx-click-to-edit/docs/
-
-## Development
-
-### Prepare your environment
-* Install [Node.js](http://nodejs.org/) and NPM
-* Install local dev dependencies: `npm install` while current directory is this repo
-
-### Development server
-Run `npm start` to start a development server on port 8000 with auto reload + tests.
-
-### Testing
-Run `npm test` to run tests once or `npm run test:watch` to continually run tests.
-
-### Release
-* Bump the version in package.json (once the module hits 1.0 this will become automatic)
-```bash
-npm run release
-```
 
 ## License
 

@@ -5,20 +5,21 @@
     "moduleResolution": "node",
     "declaration": true,
     "experimentalDecorators": true,
-    "baseUrl": "",
+    "baseUrl": ".",
     "stripInternal": true,
-    "outDir": "./dist",
+    "outDir": "./dist/esm",
+    "rootDir": "./",
     "sourceMap": true,
     "inlineSources": true,
-    "types": [],
-    "lib": ["es2015", "dom"]
+    "types": ["node"],
+    "lib": ["dom", "es2015"]
   },
   "files": [
     "src/index.ts"
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
-    "genDir": "./dist/",
+    "genDir": "./dist/esm",
     "skipTemplateCodegen": true,
     "debug": true
   }

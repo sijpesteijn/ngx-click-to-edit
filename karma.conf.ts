@@ -1,110 +1,74 @@
 import * as webpack from 'webpack';
-import * as path from 'path';
 
-export default config => {
+export default function(config) {
+  config.set({
 
-    config.set({
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: './',
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['jasmine'],
 
-        // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: './',
+    // list of files / patterns to load in the browser
+    files: [
+        { pattern: 'karma-main.js', watched: false }
+    ],
 
-        // frameworks to use
-        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine'],
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+      'karma-main.js': ['webpack', 'sourcemap']
+    },
 
-        // list of files / patterns to load in the browser
-        files: [
-            'test/entry.ts'
-        ],
+    webpack: {
+      resolve: {
+        extensions: ['.ts', '.js']
+      },
+      module: {
+        rules: [{
+          test: /\.ts$/,
+          loader: 'tslint-loader',
+          exclude: /node_modules/,
+          enforce: 'pre',
+          options: {
+            emitErrors: config.singleRun,
+            failOnHint: config.singleRun
+          }
+        }, {
+          test: /\.ts$/,
+          loader: 'awesome-typescript-loader',
+          exclude: /node_modules/
+        }, {
+          test: /src\/.+\.ts$/,
+          exclude: /(test|node_modules)/,
+          loader: 'istanbul-instrumenter-loader',
+          enforce: 'post'
+        }]
+      }
+    },
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {
-            'test/entry.ts': ['webpack', 'sourcemap']
-        },
+    coverageIstanbulReporter: {
+      reports: ['text-summary', 'html', 'lcovonly'],
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 50,
+        lines: 50,
+        branches: 50,
+        functions: 50
+      }
+    },
 
-        webpack: {
-            resolve: {
-                extensions: ['.ts', '.js']
-            },
-            module : {
-                rules: [
-                    {
-                        test   : /\.ts$/,
-                        loader : 'tslint-loader',
-                        exclude: /node_modules/,
-                        enforce: 'pre',
-                        options: {
-                            emitErrors: config.singleRun,
-                            failOnHint: config.singleRun
-                        }
-                    },
-                    { test: /\.html$/, loader: 'html-loader' },
-                    {
-                        test: /\.css$/,
-                        use: ['to-string-loader', 'css-loader']
-                    },
-                    {
-                        test: /images\/.*\.(png|jpg|svg|gif)$/,
-                        loader: 'url-loader?limit=10000&name="[name]-[hash].[ext]"',
-                    },
-                    {
-                        test: /fonts\/.*\.(woff|woff2|eot|ttf|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                        loader: 'file-loader?name="[name]-[hash].[ext]"'
-                    },
-                    {
-                        test   : /\.ts$/,
-                        loader : 'awesome-typescript-loader',
-                        exclude: /node_modules/
-                    }, {
-                        test   : /src\/.+\.ts$/,
-                        exclude: /(node_modules|\.spec\.ts$)/,
-                        loader : 'istanbul-instrumenter-loader',
-                        enforce: 'post'
-                    }]
-            },
-            plugins: [
-                new webpack.SourceMapDevToolPlugin({
-                    filename: null,
-                    test    : /\.(ts|js)($|\?)/i
-                }),
-                new webpack.ContextReplacementPlugin(
-                    /angular(\\|\/)core(\\|\/)@angular/,
-                    path.join(__dirname, 'src')
-                ),
-                ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
-            ]
-        },
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['progress', 'coverage-istanbul'],
 
-        coverageIstanbulReporter: {
-            reports              : ['text-summary', 'html', 'lcovonly'],
-            fixWebpackSourcePaths: true
-        },
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
 
-        // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage-istanbul'],
-
-        // level of logging
-        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO ||
-        // config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
-
-        // start these browsers
-        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
-
-        phantomjsLauncher: {
-            // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
-            exitOnResourceError: true
-        },
-
-        browserConsoleLogOptions: {
-            terminal: true,
-            level   : 'log'
-        }
-
-    });
-
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['PhantomJS']
+  });
 };

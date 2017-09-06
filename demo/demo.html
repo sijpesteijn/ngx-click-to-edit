@@ -38,17 +38,13 @@
             export class AppModule()&#123;&#125;</pre>
 
                     <h2 fragment="examples" id="examples" routerlink=".">Examples</h2>
-                    <p>Wrap the dropdown’s toggle (your button or link) and the dropdown menu within
-                        <code>dropdown</code>.
-                        Dropdowns can be triggered from <code> &lt;a&gt;</code> or <code> &lt;button&gt;</code> elements
-                        to better fit your potential needs.</p>
 
                     <h2 fragment="default" id="default" routerlink=".">Default use</h2>
 
                     <p>Default usage.</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [value]="'Limpsum'" (onSave)="showValue($event)"></ngx-click-to-edit>
+                        <click-to-edit [value]="'Limpsum'" (onSave)="showValue($event)"></click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
@@ -73,12 +69,12 @@
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"Limpsum"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
                                     <div heading="component" [class.active]="isActive('default','component')"
@@ -116,32 +112,32 @@
                     <p>Fully selectable usage.</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [value]="'Limpsum'" [full]="true" (onSave)="showValue($event)"></ngx-click-to-edit>
+                        <click-to-edit [value]="'Limpsum'" [full]="true" (onSave)="showValue($event)"></click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item" [class.active]="isActive('default','template')">
-                                        <a class="nav-link" (click)="activate('default','template')"
+                                    <li class="nav-item" [class.active]="isActive('full','template')">
+                                        <a class="nav-link" (click)="activate('full','template')"
                                            href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" [class.active]="isActive('default','component')">
-                                        <a class="nav-link" (click)="activate('default','component')"
+                                    <li class="nav-item" [class.active]="isActive('full','component')">
+                                        <a class="nav-link" (click)="activate('full','component')"
                                            href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" [class.active]="isActive('default','template')"
+                                    <div heading="component" [class.active]="isActive('full','template')"
                                          class="tab-pane">
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"Limpsum"</span><span
@@ -149,10 +145,10 @@
                 class="atn">full</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"true"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
-                                    <div heading="component" [class.active]="isActive('default','component')"
+                                    <div heading="component" [class.active]="isActive('full','component')"
                                          class="tab-pane">
                                         <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
                                                 class="linenums"><li><span class="kwd">import</span><span
@@ -187,32 +183,31 @@
                     <p>Numeric usage.</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [type]="number" [value]="9" [min]="-3" [max]="10" (onSave)="showValue($event)"></ngx-click-to-edit>
+                        <click-to-edit [type]="number" [value]="9" [min]="-3" [max]="10" (onSave)="showValue($event)"></click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item" [class.active]="isActive('default','template')">
-                                        <a class="nav-link" (click)="activate('default','template')"
+                                    <li class="nav-item" [class.active]="isActive('number','template')">
+                                        <a class="nav-link" (click)="activate('number','template')"
                                            href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" [class.active]="isActive('default','component')">
-                                        <a class="nav-link" (click)="activate('default','component')"
+                                    <li class="nav-item" [class.active]="isActive('number','component')">
+                                        <a class="nav-link" (click)="activate('number','component')"
                                            href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" [class.active]="isActive('default','template')"
-                                         class="tab-pane">
+                                    <div heading="component" [class.active]="isActive('number','template')" class="tab-pane">
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">type</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"number"</span><span
@@ -226,11 +221,10 @@
                 class="atn">max</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"10"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
-                                    <div heading="component" [class.active]="isActive('default','component')"
-                                         class="tab-pane">
+                                    <div heading="component" [class.active]="isActive('number','component')" class="tab-pane">
                                         <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
                                                 class="linenums"><li><span class="kwd">import</span><span
                                                 class="pln"> </span><span class="pun">&#123;</span><span
@@ -264,32 +258,31 @@
                     <p>Numeric with unit</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [type]="number" [value]="9" [unit]="'m/s'" [min]="-3" [max]="10" (onSave)="showValue($event)"></ngx-click-to-edit>
+                        <click-to-edit [type]="number" [value]="9" [unit]="'m/s'" [min]="-3" [max]="10" (onSave)="showValue($event)"></click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item" [class.active]="isActive('default','template')">
-                                        <a class="nav-link" (click)="activate('default','template')"
+                                    <li class="nav-item" [class.active]="isActive('number_unit','template')">
+                                        <a class="nav-link" (click)="activate('number_unit','template')"
                                            href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" [class.active]="isActive('default','component')">
-                                        <a class="nav-link" (click)="activate('default','component')"
+                                    <li class="nav-item" [class.active]="isActive('number_unit','component')">
+                                        <a class="nav-link" (click)="activate('number_unit','component')"
                                            href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" [class.active]="isActive('default','template')"
-                                         class="tab-pane">
+                                    <div heading="component" [class.active]="isActive('number_unit','template')" class="tab-pane">
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">type</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"number"</span><span
@@ -306,11 +299,10 @@
                 class="atn">max</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"10"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span><span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
-                                    <div heading="component" [class.active]="isActive('default','component')"
-                                         class="tab-pane">
+                                    <div heading="component" [class.active]="isActive('number_unit','component')" class="tab-pane">
                                         <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
                                                 class="linenums"><li><span class="kwd">import</span><span
                                                 class="pln"> </span><span class="pun">&#123;</span><span
@@ -344,40 +336,40 @@
                     <p>With ng-content</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [value]="'Limpsum'" (onSave)="showValue($event)">edit</ngx-click-to-edit>
+                        <click-to-edit [value]="'Limpsum'" (onSave)="showValue($event)">edit</click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item" [class.active]="isActive('default','template')">
-                                        <a class="nav-link" (click)="activate('default','template')"
+                                    <li class="nav-item" [class.active]="isActive('ng_content','template')">
+                                        <a class="nav-link" (click)="activate('ng_content','template')"
                                            href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" [class.active]="isActive('default','component')">
-                                        <a class="nav-link" (click)="activate('default','component')"
+                                    <li class="nav-item" [class.active]="isActive('ng_content','component')">
+                                        <a class="nav-link" (click)="activate('ng_content','component')"
                                            href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" [class.active]="isActive('default','template')"
+                                    <div heading="component" [class.active]="isActive('ng_content','template')"
                                          class="tab-pane">
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"Limpsum"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
-                                    <div heading="component" [class.active]="isActive('default','component')"
+                                    <div heading="component" [class.active]="isActive('ng_content','component')"
                                          class="tab-pane">
                                         <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
                                                 class="linenums"><li><span class="kwd">import</span><span
@@ -412,32 +404,32 @@
                     <p>Fully selectable with ng-content</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [value]="'Limpsum'" [full]="true" (onSave)="showValue($event)">edit</ngx-click-to-edit>
+                        <click-to-edit [value]="'Limpsum'" [full]="true" (onSave)="showValue($event)">edit</click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item" [class.active]="isActive('default','template')">
-                                        <a class="nav-link" (click)="activate('default','template')"
+                                    <li class="nav-item" [class.active]="isActive('fully_with_ng_content','template')">
+                                        <a class="nav-link" (click)="activate('fully_with_ng_content','template')"
                                            href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" [class.active]="isActive('default','component')">
-                                        <a class="nav-link" (click)="activate('default','component')"
+                                    <li class="nav-item" [class.active]="isActive('fully_with_ng_content','component')">
+                                        <a class="nav-link" (click)="activate('fully_with_ng_content','component')"
                                            href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" [class.active]="isActive('default','template')"
+                                    <div heading="component" [class.active]="isActive('fully_with_ng_content','template')"
                                          class="tab-pane">
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"Limpsum"</span><span
@@ -445,10 +437,10 @@
                 class="atn">full</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"true"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
-                                    <div heading="component" [class.active]="isActive('default','component')"
+                                    <div heading="component" [class.active]="isActive('fully_with_ng_content','component')"
                                          class="tab-pane">
                                         <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
                                                 class="linenums"><li><span class="kwd">import</span><span
@@ -483,32 +475,32 @@
                     <p>No trigger icon</p>
 
                     <div class="section cte-example">
-                        <ngx-click-to-edit [value]="'Limpsum'" [hideTrigger]="true" (onSave)="showValue($event)"></ngx-click-to-edit>
+                        <click-to-edit [value]="'Limpsum'" [hideTrigger]="true" (onSave)="showValue($event)"></click-to-edit>
                     </div>
                     <div class="section">
                         <div class="item">
                             <div class="tab-container">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item" [class.active]="isActive('default','template')">
-                                        <a class="nav-link" (click)="activate('default','template')"
+                                    <li class="nav-item" [class.active]="isActive('no_icon','template')">
+                                        <a class="nav-link" (click)="activate('no_icon','template')"
                                            href="javascript:void(0);">
                                             <span>template</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" [class.active]="isActive('default','component')">
-                                        <a class="nav-link" (click)="activate('default','component')"
+                                    <li class="nav-item" [class.active]="isActive('no_icon','component')">
+                                        <a class="nav-link" (click)="activate('no_icon','component')"
                                            href="javascript:void(0);">
                                             <span>component</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div heading="component" [class.active]="isActive('default','template')"
+                                    <div heading="component" [class.active]="isActive('no_icon','template')"
                                          class="tab-pane">
                                         <pre>
 
 
-        <ol class="linenums"><li class="L0"><span class="tag">&lt;ngx-click-to-edit</span><span
+        <ol class="linenums"><li class="L0"><span class="tag">&lt;click-to-edit</span><span
                 class="pln"> [</span><span
                 class="atn">value</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"Limpsum"</span><span
@@ -516,10 +508,10 @@
                 class="atn">noTrigger</span><span class="pln">]</span><span class="pun">=</span><span
                 class="atv">"true"</span><span class="pln"> (</span><span
                 class="atn">onSave</span><span class="pln">)</span><span class="pun">=</span><span
-                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/ngx-click-to-edit&gt;</span></li>
+                class="atv">"showValue($event)"</span><span class="tag">&gt;</span>edit<span class="tag">&lt;/click-to-edit&gt;</span></li>
         </ol></pre>
                                     </div>
-                                    <div heading="component" [class.active]="isActive('default','component')"
+                                    <div heading="component" [class.active]="isActive('no_icon','component')"
                                          class="tab-pane">
                                         <pre class="prettyprint linenums lang-js prettyprinted" style=""><ol
                                                 class="linenums"><li><span class="kwd">import</span><span

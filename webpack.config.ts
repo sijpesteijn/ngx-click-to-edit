@@ -1,51 +1,34 @@
 import * as webpack from 'webpack';
-import * as path from 'path';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-
-const IS_PROD: boolean = process.argv.indexOf('-p') > -1;
+const IS_PROD = process.argv.indexOf('-p') > -1;
 
 export default {
     devtool  : IS_PROD ? 'source-map' : 'eval',
-    entry    : path.join(__dirname, 'demo', 'entry.ts'),
+    entry    : __dirname + '/demo/entry.ts',
     output   : {
-        filename: IS_PROD ? '[name]-[chunkhash].js' : '[name].js'
+        filename: 'demo.js',
+        path    : IS_PROD ? __dirname + '/demo' : __dirname
     },
     module   : {
-        rules  : [
-            { test: /\.html$/, loader: 'html-loader' },
-            {
-                test: /\.css$/,
-                use: ['to-string-loader', 'css-loader']
-            },
-            {
-                test: /images\/.*\.(png|jpg|svg|gif)$/,
-                loader: 'url-loader?limit=10000&name="[name]-[hash].[ext]"',
-            },
-            {
-                test: /fonts\/.*\.(woff|woff2|eot|ttf|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'file-loader?name="[name]-[hash].[ext]"'
-            },
-            {
-                test   : /\.ts$/,
-                loader : 'tslint-loader?emitErrors=false&failOnHint=false',
-                exclude: /node_modules/,
-                enforce: 'pre'
-            }, {
-                test   : /\.ts$/,
-                loader : 'awesome-typescript-loader',
-                exclude: /node_modules/
-            }],
-        loaders: [
-        ]
+        rules: [{
+            test   : /\.ts$/,
+            loader : 'tslint-loader?emitErrors=false&failOnHint=false',
+            exclude: /node_modules/,
+            enforce: 'pre'
+        }, {
+            test   : /\.ts$/,
+            loader : 'awesome-typescript-loader',
+            exclude: /node_modules/
+        }]
     },
     resolve  : {
-        extensions: ['.ts', '.js', '.css']
+        extensions: ['.ts', '.js']
     },
     devServer: {
         port              : 8000,
         inline            : true,
         hot               : true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        contentBase       : 'demo'
     },
     plugins  : [
         ...(IS_PROD ? [] : [new webpack.HotModuleReplacementPlugin()]),
@@ -54,10 +37,8 @@ export default {
         }),
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)@angular/,
-            path.join(__dirname, 'src')
-        ),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'demo', 'index.ejs')
-        })
+            __dirname + '/src'
+        ))
     ]
-};
+}
+;

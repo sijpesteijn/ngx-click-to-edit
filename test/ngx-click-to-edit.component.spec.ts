@@ -4,7 +4,7 @@ import {
     TestBed, async
 } from '@angular/core/testing';
 
-import { NgxClickToEditModule } from '../index';
+import { NgxClickToEditModule } from '../src/index';
 import { NgxClickToEditComponent } from '../src/ngx-click-to-edit.component';
 
 describe('click to edit component', () => {

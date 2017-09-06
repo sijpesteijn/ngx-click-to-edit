@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgxClickToEditComponent } from './src/ngx-click-to-edit.component';
+import { NgxClickToEditComponent } from './ngx-click-to-edit.component';
 
 @NgModule({
     declarations: [
@@ -12,7 +12,10 @@ import { NgxClickToEditComponent } from './src/ngx-click-to-edit.component';
         FormsModule
     ],
     exports     : [
-        NgxClickToEditComponent
+      NgxClickToEditComponent
+    ],
+    entryComponents: [
+      NgxClickToEditComponent
     ]
 })
 export class NgxClickToEditModule {

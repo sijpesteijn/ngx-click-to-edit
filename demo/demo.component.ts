@@ -13,7 +13,11 @@ export class DemoComponent {
     constructor() {
         this.sections.set('default', 'template');
         this.sections.set('full', 'template');
-        this.sections.set('numeric', 'template');
+        this.sections.set('number', 'template');
+        this.sections.set('number_unit', 'template');
+        this.sections.set('ng_content', 'template');
+        this.sections.set('fully_with_ng_content', 'template');
+        this.sections.set('no_icon', 'template');
     }
 
     private activate(section: string, tab: string): void {

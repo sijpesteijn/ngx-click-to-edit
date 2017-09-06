@@ -7,51 +7,33 @@ import * as rxjsExternals from 'webpack-rxjs-externals';
 const pkg = JSON.parse(fs.readFileSync('./package.json').toString());
 
 export default {
-    entry    : {
-        'ngx-click-to-edit.umd'    : path.join(__dirname, 'src', 'index.ts'),
-        'ngx-click-to-edit.umd.min': path.join(__dirname, 'src', 'index.ts'),
-    },
-    output   : {
-        path         : path.join(__dirname, 'bundles'),
-        publicPath   : '/',
-        filename     : '[name].js',
-        libraryTarget: 'umd',
-        library      : 'ngxClickToEdit'
-    },
-    externals: [
+  entry: __dirname + '/src/index.ts',
+  output: {
+    path: __dirname + '/dist/umd',
+    filename: 'ngx-click-to-edit.js',
+    libraryTarget: 'umd',
+    library: 'ngxClickToEdit'
+  },
+  externals: [
         angularExternals(),
         rxjsExternals()
-    ],
-    devtool  : 'source-map',
-    module   : {
-        rules: [
-            {
-                test   : /\.ts$/,
-                loader : 'tslint-loader?emitErrors=true&failOnHint=true',
-                exclude: /node_modules/,
-                enforce: 'pre'
-            }, {
-                test   : /\.ts$/,
-                loader : 'awesome-typescript-loader',
-                exclude: /node_modules/
-            },
-            { test: /\.html$/, loader: 'html-loader' },
-            {
-                test: /\.css$/,
-                use : ['to-string-loader', 'css-loader']
-            },
-            {
-                test  : /images\/.*\.(png|jpg|svg|gif)$/,
-                loader: 'url-loader?limit=10000&name="[name]-[hash].[ext]"',
-            },
-            {
-                test  : /fonts\/.*\.(woff|woff2|eot|ttf|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'file-loader?name="[name]-[hash].[ext]"'
+  ],
+  devtool: 'source-map',
+  module: {
+    rules: [{
+      test: /\.ts$/,
+      loader: 'tslint-loader?emitErrors=true&failOnHint=true',
+      exclude: /node_modules/,
+      enforce: 'pre'
+    }, {
+      test: /\.ts$/,
+      loader: 'awesome-typescript-loader',
+      exclude: /node_modules/
             }
         ]
-    },
-    resolve  : {
-        extensions: ['.ts', '.js']
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
     },
     plugins  : [
         new webpack.optimize.UglifyJsPlugin({
