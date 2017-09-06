@@ -25,6 +25,7 @@ import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/
     </div>
 </div>`,
     styles  : [`.click-to-edit {
+      width: inherit;
 }
 
 .selectable {
