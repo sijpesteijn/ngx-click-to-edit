@@ -9,7 +9,7 @@ const pkg = JSON.parse(fs.readFileSync('./package.json').toString());
 export default {
   entry: __dirname + '/src/index.ts',
   output: {
-    path: __dirname + '/dist/umd',
+    path: __dirname + '/dist/',
     filename: 'ngx-click-to-edit.js',
     libraryTarget: 'umd',
     library: 'ngxClickToEdit'
