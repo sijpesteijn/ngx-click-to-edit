@@ -32,11 +32,11 @@ Then include in your apps module:
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
-import { ngxClickToEditModule } from 'ngx-click-to-edit';
+import { NgxClickToEditModule } from 'ngx-click-to-edit';
 
 @NgModule({
   imports: [
-    ngxClickToEditModule.forRoot()
+    NgxClickToEditModule.forRoot()
   ]
 })
 export class MyModule {}
