@@ -1,6 +1,6 @@
 {
   "name": "ngx-click-to-edit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/ngx-click-to-edit.js",
   "module": "dist/index.js",
