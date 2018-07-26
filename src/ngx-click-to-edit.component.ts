@@ -19,7 +19,7 @@ import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/
                  (click)='makeEditable("unit")' *ngIf="unit !== ''" [innerHTML]="unit"></div>
         </div>
     </div>
-    <div class='ndv-buttons' *ngIf='show'>
+    <div class='ndv-buttons' *ngIf='!hideButtons && show'>
         <button class='btn-x-sm' (click)='callSave()'><i class="fa fa-check"></i></button>
         <button class='btn-x-sm' (click)='cancelEditable()'><i class="fa fa-times"></i></button>
     </div>
@@ -96,6 +96,7 @@ export class NgxClickToEditComponent implements AfterViewInit {
     @Input('unit') unit: string                = '';
     @Input('full') full: boolean               = false;
     @Input('hideTrigger') hideTrigger: boolean = false;
+    @Input('hideButtons') hideButtons: boolean = false;
     @Input('type') type: string                = 'string';
                   show: boolean                = false;
                   value: any                   = '';
